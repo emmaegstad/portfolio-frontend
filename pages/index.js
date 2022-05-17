@@ -1,11 +1,11 @@
 import Head from 'next/head';
-import { client } from '../utils/projects';
+import Link from 'next/link';
 
-export default function Home({ projects }) {
+export default function Home({}) {
     return (
         <div>
             <Head>
-                <title>Emma Egstad</title>
+                <title>Portfolio</title>
                 <meta
                     name="description"
                     content="Hello! My name is Emma, and I'm a full-stack web developer located in Tulsa, OK."
@@ -13,31 +13,11 @@ export default function Home({ projects }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <section>
-                {projects.length > 0 && (
-                    <ul>
-                        {projects.map((project) => (
-                            <li key={project._id}>
-                                <p>{project?.title}</p>
-                                <p>
-                                    {project?.description[0].children[0].text}
-                                </p>
-                                <p>{project?.github}</p>
-                                <p>{project?.site}</p>
-                            </li>
-                        ))}
-                    </ul>
-                )}
+                <h1>My Poppin Portfolio</h1>
+                <Link href="/projects">
+                    <a>View Projects</a>
+                </Link>
             </section>
         </div>
     );
-}
-
-export async function getStaticProps() {
-    const projects = await client.fetch(`*[_type == "project"]`);
-
-    return {
-        props: {
-            projects,
-        },
-    };
 }
