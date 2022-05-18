@@ -1,5 +1,6 @@
-import { client } from '../utils/projects';
+import { client } from '../lib/projects';
 import Link from 'next/link';
+import { PortableText } from '@portabletext/react';
 
 export default function Projects({ projects }) {
     return (
@@ -9,7 +10,7 @@ export default function Projects({ projects }) {
                     {projects.map((project) => (
                         <li key={project._id}>
                             <p>{project?.title}</p>
-                            <p>{project?.description[0].children[0].text}</p>
+                            <PortableText value={project?.description} />
                             <p>{project?.github}</p>
                             <p>{project?.site}</p>
                         </li>
