@@ -1,9 +1,10 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Layout from '../components/layout';
 
 export default function Home({}) {
     return (
-        <div>
+        <Layout>
             <Head>
                 <title>Portfolio</title>
                 <meta
@@ -18,6 +19,6 @@ export default function Home({}) {
                     <a>View Projects</a>
                 </Link>
             </section>
-        </div>
+        </Layout>
     );
 }
