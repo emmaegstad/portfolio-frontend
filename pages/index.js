@@ -1,9 +1,13 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import Layout from '../components/Layout';
 
 export default function Home({}) {
+    const [activeNav, setActiveNav] = useState('/index');
+
     return (
-        <div>
+        <>
             <Head>
                 <title>Portfolio</title>
                 <meta
@@ -12,12 +16,7 @@ export default function Home({}) {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <section>
-                <h1>My Poppin Portfolio</h1>
-                <Link href="/projects">
-                    <a>View Projects</a>
-                </Link>
-            </section>
-        </div>
+            <h1>Home</h1>
+        </>
     );
 }

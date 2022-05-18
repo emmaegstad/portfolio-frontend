@@ -1,10 +1,11 @@
 import { client } from '../lib/projects';
 import Link from 'next/link';
 import { PortableText } from '@portabletext/react';
+import Layout from '../components/Layout';
 
 export default function Projects({ projects }) {
     return (
-        <div>
+        <>
             {projects.length > 0 && (
                 <ul>
                     {projects.map((project) => (
@@ -20,7 +21,7 @@ export default function Projects({ projects }) {
             <Link href="/">
                 <a>Go Back Home</a>
             </Link>
-        </div>
+        </>
     );
 }
 
