@@ -1,0 +1,37 @@
+.navBar {
+    display: flex;
+    margin: 25px 25px 0 25px;
+    border-radius: 25px;
+    background-color: #ededed;
+}
+
+.navBarButton {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    padding: 10px;
+    border-radius: 25px;
+    font-family: monospace;
+}
+
+.active {
+    background-color: red;
+}
+
+.index:hover,
+.indexActive {
+    background-color: #52915c;
+    transition: all 0.5s ease;
+}
+
+.work:hover,
+.workActive {
+    background-color: #faa740;
+    transition: all 0.5s ease;
+}
+
+.about:hover,
+.aboutActive {
+    background-color: #f7c7e1;
+    transition: all 0.5s ease;
+}
