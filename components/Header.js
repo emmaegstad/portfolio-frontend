@@ -8,11 +8,11 @@ export default function Header({ activeNav, setActiveNav }) {
             <ul className={styles.navBar}>
                 <Link href="/">
                     <a
-                        onClick={(e) => setActiveNav(e.target.innerText)}
+                        onClick={() => setActiveNav('/')}
                         className={cn({
                             [styles.navBarButton]: true,
                             [styles.index]: true,
-                            [styles.indexActive]: activeNav === '/index',
+                            [styles.indexActive]: activeNav === '/',
                         })}
                     >
                         /index
@@ -20,7 +20,7 @@ export default function Header({ activeNav, setActiveNav }) {
                 </Link>
                 <Link href="/work">
                     <a
-                        onClick={(e) => setActiveNav(e.target.innerText)}
+                        onClick={() => setActiveNav('/work')}
                         className={cn({
                             [styles.navBarButton]: true,
                             [styles.work]: true,
@@ -32,7 +32,7 @@ export default function Header({ activeNav, setActiveNav }) {
                 </Link>
                 <Link href="/about">
                     <a
-                        onClick={(e) => setActiveNav(e.target.innerText)}
+                        onClick={() => setActiveNav('/about')}
                         className={cn({
                             [styles.navBarButton]: true,
                             [styles.about]: true,

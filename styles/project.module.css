@@ -1,0 +1,16 @@
+.Project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.projectTitle {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-xl);
+}
+
+.projectDescription {
+    color: red;
+}
