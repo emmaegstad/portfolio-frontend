@@ -8,5 +8,9 @@
 
 .projectTitle {
     font-family: var(--font-secondary);
-    font-size: var(--font-size-large);
+    font-size: var(--font-size-xl);
+}
+
+.projectDescription {
+    color: red;
 }

@@ -2,10 +2,12 @@
     --background: #ffffff;
     --foreground: #000000;
     --accent: #0000ff;
+
     --font-primary: 'GT-Maru-Regular', Helvetica, sans-serif;
     --font-secondary: 'GT-Maru-Mega', Helvetica, sans-serif;
     --font-mono: 'GT-Maru-Mono', monospace;
 
     --font-size-medium: clamp(14px, 2vw, 21px);
     --font-size-large: clamp(24px, 4vw, 42px);
+    --font-size-xl: clamp(40px, 7vw, 75px);
 }

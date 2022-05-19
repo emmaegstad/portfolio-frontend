@@ -1,11 +1,21 @@
 import '../styles/reset.css';
 import '../styles/global.css';
 import '../styles/fonts.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
+import { useRouter } from 'next/router';
 
 function MyApp({ Component, pageProps }) {
-    const [activeNav, setActiveNav] = useState('/index');
+    const router = useRouter();
+    const [activeNav, setActiveNav] = useState();
+
+    useEffect(() => {
+        function getRoute() {
+            console.log(router.pathname);
+            setActiveNav(router.pathname);
+        }
+        getRoute();
+    }, [router.pathname]);
 
     return (
         <Layout activeNav={activeNav} setActiveNav={setActiveNav}>
