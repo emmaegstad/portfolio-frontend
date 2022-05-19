@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'GT-Maru-Regular';
+    src: url('/fonts/GT-Maru-Regular-Trial.woff2');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT-Maru-Mega';
+    src: url('/fonts/GT-Maru-Mega-Midi-Trial.woff2');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT-Maru-Mono';
+    src: url('/fonts/GT-Maru-Mono-Regular-Trial.woff2');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
