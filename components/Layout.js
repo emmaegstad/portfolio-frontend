@@ -8,7 +8,7 @@ export default function Layout({ children, activeNav, setActiveNav }) {
     return (
         <div className={styles.Layout}>
             <Header activeNav={activeNav} setActiveNav={setActiveNav} />
-            {children}
+            <main>{children}</main>
             <Footer />
         </div>
     );
