@@ -1,0 +1,12 @@
+.Work {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.workProjects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}

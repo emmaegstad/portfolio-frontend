@@ -1,27 +1,20 @@
 import { client } from '../lib/projects';
 import Link from 'next/link';
-import { PortableText } from '@portabletext/react';
-import Layout from '../components/Layout';
+import Project from '../components/Project';
+import { v4 as uuid } from 'uuid';
+import styles from '../styles/work.module.css';
 
-export default function Projects({ projects }) {
+export default function Work({ projects }) {
     return (
-        <>
+        <div className={styles.Work}>
             {projects.length > 0 && (
-                <ul>
+                <ul className={styles.workProjects}>
                     {projects.map((project) => (
-                        <li key={project._id}>
-                            <p>{project?.title}</p>
-                            <PortableText value={project?.description} />
-                            <p>{project?.github}</p>
-                            <p>{project?.site}</p>
-                        </li>
+                        <Project key={uuid()} project={project} />
                     ))}
                 </ul>
             )}
-            <Link href="/">
-                <a>Go Back Home</a>
-            </Link>
-        </>
+        </div>
     );
 }
 
