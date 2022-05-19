@@ -1,37 +1,45 @@
 .navBar {
     display: flex;
-    margin: 25px 25px 0 25px;
-    border-radius: 25px;
-    background-color: #ededed;
+    margin: 1em;
+    border-radius: 100vw;
+    background-color: hsl(0, 0%, 93%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navBar:hover .indexActive,
+.navBar:hover .workActive,
+.navBar:hover .aboutActive {
+    background-color: transparent;
 }
 
 .navBarButton {
+    height: clamp(44px, 6vw, 54px);
     display: flex;
     justify-content: center;
+    align-items: center;
     flex: 1;
-    padding: 10px;
-    border-radius: 25px;
-    font-family: monospace;
+    border-radius: 100vw;
+    font-family: var(--font-mono);
+    font-size: var(--font-size-medium);
+    transition: background-color 0.5s ease-out, color 0.5s ease-out;
 }
 
-.active {
-    background-color: red;
-}
-
+.navBar:hover .indexActive:hover,
 .index:hover,
 .indexActive {
     background-color: #52915c;
-    transition: all 0.5s ease;
 }
 
+.navBar:hover .workActive:hover,
 .work:hover,
 .workActive {
     background-color: #faa740;
-    transition: all 0.5s ease;
 }
 
+.navBar:hover .aboutActive:hover,
 .about:hover,
 .aboutActive {
     background-color: #f7c7e1;
-    transition: all 0.5s ease;
 }

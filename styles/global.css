@@ -1,9 +1,10 @@
-* {
-    box-sizing: border-box;
-}
+:root {
+    --background: #ffffff;
+    --foreground: #000000;
+    --accent: #0000ff;
+    --font-primary: 'GT-Maru-Regular', Helvetica, sans-serif;
+    --font-secondary: 'GT-Maru-Mega', Helvetica, sans-serif;
+    --font-mono: 'GT-Maru-Mono', monospace;
 
-html,
-body {
-    padding: 0;
-    margin: 0;
+    --font-size-medium: clamp(12px, 2vw, 21px);
 }

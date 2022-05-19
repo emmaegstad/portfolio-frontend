@@ -1,4 +1,6 @@
+import '../styles/reset.css';
 import '../styles/global.css';
+import '../styles/fonts.css';
 import { useState } from 'react';
 import Layout from '../components/Layout';
 
