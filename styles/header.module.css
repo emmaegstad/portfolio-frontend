@@ -21,6 +21,8 @@
     border-radius: 100vw;
     font-family: var(--font-mono);
     font-size: var(--font-size-medium);
+    color: black;
+    text-decoration: none;
     transition: background-color 0.5s ease-out, color 0.5s ease-out;
 }
 
