@@ -1,15 +1,16 @@
 .footerNav {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 0.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
 }
 
 .footerLink {
-    height: clamp(85px, 13vw, 120px);
-    margin: 0.3em;
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex: 1;
+    justify-content: center;
+    height: clamp(85px, 13vw, 120px);
     border-radius: 100vw;
     font-family: var(--font-mono);
     font-size: var(--font-size-large);
@@ -17,6 +18,12 @@
     text-decoration: none;
     transition: background-color 0.5s ease-out, color 0.5s ease-out;
     cursor: pointer;
+}
+
+@media (min-width: 640px) {
+    .footerNav {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .github {
