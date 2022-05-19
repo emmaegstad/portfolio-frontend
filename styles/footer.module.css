@@ -1,0 +1,33 @@
+.footerNav {
+    display: flex;
+    justify-content: center;
+}
+
+.footerLink {
+    height: clamp(85px, 13vw, 120px);
+    margin: 0.3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    border-radius: 100vw;
+    font-family: var(--font-mono);
+    font-size: var(--font-size-large);
+    color: black;
+    text-decoration: none;
+    transition: background-color 0.5s ease-out, color 0.5s ease-out;
+    cursor: pointer;
+}
+
+.github {
+    color: white;
+    background-color: #52915c;
+}
+
+.linkedin {
+    background-color: #faa740;
+}
+
+.email {
+    background-color: #f7c7e1;
+}
