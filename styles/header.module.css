@@ -1,6 +1,5 @@
 .navBar {
     display: flex;
-    /* width: 100vw; */
     margin: 1em;
     border-radius: 100vw;
     background-color: hsl(0, 0%, 93%);
@@ -24,11 +23,13 @@
     color: black;
     text-decoration: none;
     transition: background-color 0.5s ease-out, color 0.5s ease-out;
+    cursor: pointer;
 }
 
 .navBar:hover .indexActive:hover,
 .index:hover,
 .indexActive {
+    color: white;
     background-color: #52915c;
 }
 

@@ -6,5 +6,6 @@
     --font-secondary: 'GT-Maru-Mega', Helvetica, sans-serif;
     --font-mono: 'GT-Maru-Mono', monospace;
 
-    --font-size-medium: clamp(12px, 2vw, 21px);
+    --font-size-medium: clamp(14px, 2vw, 21px);
+    --font-size-large: clamp(24px, 4vw, 42px);
 }
