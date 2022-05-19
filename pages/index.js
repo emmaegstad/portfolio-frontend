@@ -14,8 +14,9 @@ export default function Index({}) {
             </Head>
             <h1 className={styles.indexLogo}>emma</h1>
             <p className={styles.indexCaption}>
-                Hello, I am Emma - full-stack software engineer based in Tulsa,
-                OK. I love front-end dev and *every* cat. 😼
+                Hello world, my name is Emma Egstad. I am am full-stack software
+                engineer in Tulsa, OK. I love making things on the web and every
+                cat in the world. ❤️🐱
             </p>
         </div>
     );
