@@ -1,13 +1,9 @@
-import { useState } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
-import Layout from '../components/Layout';
+import styles from '../styles/index.module.css';
 
-export default function Home({}) {
-    const [activeNav, setActiveNav] = useState('/index');
-
+export default function Index({}) {
     return (
-        <>
+        <div className={styles.Index}>
             <Head>
                 <title>Portfolio</title>
                 <meta
@@ -16,7 +12,11 @@ export default function Home({}) {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <h1>Home</h1>
-        </>
+            <h1 className={styles.indexLogo}>emma</h1>
+            <p className={styles.indexCaption}>
+                Hello, I am Emma - full-stack software engineer based in Tulsa,
+                OK. I love front-end dev and *every* cat. 😼
+            </p>
+        </div>
     );
 }

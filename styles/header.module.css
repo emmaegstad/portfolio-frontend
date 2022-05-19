@@ -1,11 +1,9 @@
 .navBar {
     display: flex;
+    /* width: 100vw; */
     margin: 1em;
     border-radius: 100vw;
     background-color: hsl(0, 0%, 93%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .navBar:hover .indexActive,
