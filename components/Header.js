@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import styles from '../styles/header.module.css';
+import Link from 'next/link';
 import cn from 'classnames';
 
 export default function Header({ activeNav, setActiveNav }) {

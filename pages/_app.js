@@ -2,16 +2,15 @@ import '../styles/reset.css';
 import '../styles/global.css';
 import '../styles/fonts.css';
 import { useEffect, useState } from 'react';
-import Layout from '../components/Layout';
 import { useRouter } from 'next/router';
+import Layout from '../components/Layout';
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
     const router = useRouter();
     const [activeNav, setActiveNav] = useState();
 
     useEffect(() => {
         function getRoute() {
-            console.log(router.pathname);
             setActiveNav(router.pathname);
         }
         getRoute();
@@ -23,5 +22,3 @@ function MyApp({ Component, pageProps }) {
         </Layout>
     );
 }
-
-export default MyApp;
