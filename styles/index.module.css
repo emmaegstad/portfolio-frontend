@@ -6,9 +6,13 @@
 }
 
 .indexLogo {
+    position: relative;
+    z-index: -1;
     font-family: var(--font-secondary);
-    font-size: clamp(125px, 35vw, 400px);
+    font-size: clamp(125px, 35vw, 1000px);
+    letter-spacing: -0.0125em;
     line-height: 1;
+    margin-top: -0.25em;
     color: #52915c;
 }
 
