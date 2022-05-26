@@ -3,14 +3,74 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1em;
+    width: 75vw;
 }
 
 .projectTitle {
     font-family: var(--font-secondary);
-    font-size: var(--font-size-xl);
+    /* font-size: var(--font-size-xl); */
+    font-size: 12vw;
+    font-feature-settings: 'ss06';
 }
 
 .projectDescription {
-    color: red;
+    max-width: 50ch;
+    /* padding: 0 4em 0 4em; */
+    /* font-size: var(--font-size-small); */
+    font-size: clamp(18px, 2vw, 24px);
+}
+
+.projectImageWrapper {
+    border: 10px solid black;
+    border-radius: 5vw;
+    margin: 2em;
+}
+
+.projectImage {
+    border-radius: 5vw;
+}
+
+.projectNav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.projectNavLinks {
+    display: flex;
+    gap: 1em;
+}
+
+.projectNavLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: clamp(20px, 3vw, 30px);
+    padding: 0 2em 0 2em;
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: #ffffff;
+    background: black;
+    border-radius: 100vw;
+    cursor: pointer;
+}
+
+.projectNavTags {
+    display: flex;
+    gap: 1em;
+}
+
+.projectNavTag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: clamp(20px, 3vw, 30px);
+    padding: 0 2em 0 2em;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: black;
+    background: rgb(209, 207, 207);
+    border-radius: 100vw;
+    cursor: pointer;
 }

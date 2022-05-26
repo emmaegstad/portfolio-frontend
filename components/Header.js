@@ -1,48 +1,44 @@
-import Link from 'next/link';
 import styles from '../styles/header.module.css';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import cn from 'classnames';
+import { v4 as uuid } from 'uuid';
 
-export default function Header({ activeNav, setActiveNav }) {
+export default function Header() {
+    const router = useRouter();
+
+    const links = [
+        {
+            name: 'index',
+            href: '/',
+        },
+        {
+            name: 'work',
+            href: '/work',
+        },
+        {
+            name: 'about',
+            href: '/about',
+        },
+    ];
+
     return (
-        <div className={styles.Header}>
-            <ul className={styles.navBar}>
-                <Link href="/">
-                    <a
-                        onClick={() => setActiveNav('/')}
-                        className={cn({
-                            [styles.navBarButton]: true,
-                            [styles.index]: true,
-                            [styles.indexActive]: activeNav === '/',
-                        })}
-                    >
-                        /index
-                    </a>
-                </Link>
-                <Link href="/work">
-                    <a
-                        onClick={() => setActiveNav('/work')}
-                        className={cn({
-                            [styles.navBarButton]: true,
-                            [styles.work]: true,
-                            [styles.workActive]: activeNav === '/work',
-                        })}
-                    >
-                        /work
-                    </a>
-                </Link>
-                <Link href="/about">
-                    <a
-                        onClick={() => setActiveNav('/about')}
-                        className={cn({
-                            [styles.navBarButton]: true,
-                            [styles.about]: true,
-                            [styles.aboutActive]: activeNav === '/about',
-                        })}
-                    >
-                        /about
-                    </a>
-                </Link>
-            </ul>
-        </div>
+        <ul className={styles.Header}>
+            {links.map((link) => (
+                <li className={styles.navBarButton} key={uuid()}>
+                    <Link href={link.href}>
+                        <a
+                            className={cn({
+                                [styles[link.name]]: true,
+                                [styles['active']]:
+                                    router.pathname === link.href,
+                            })}
+                        >
+                            {`/${link.name}`}
+                        </a>
+                    </Link>
+                </li>
+            ))}
+        </ul>
     );
 }
