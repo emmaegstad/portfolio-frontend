@@ -3,7 +3,7 @@ import styles from '../styles/index.module.css';
 
 export default function Index({}) {
     return (
-        <div className={styles.Index}>
+        <div className={styles.index}>
             <Head>
                 <title>Portfolio</title>
                 <meta

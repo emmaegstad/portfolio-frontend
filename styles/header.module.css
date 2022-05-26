@@ -1,49 +1,52 @@
-.Header {
+.header {
+    width: 100%;
     display: flex;
-    margin: 1em;
-    border-radius: 100vw;
-    background-color: hsl(0, 0%, 93%);
+    padding: 0.6em;
 }
 
-/* hide styles when hovered on the header */
-.Header:hover .navBarButton a {
-    background-color: transparent;
-    color: black;
+@media (min-width: 640px) {
+    .header {
+        justify-content: space-between;
+    }
 }
 
-.navBarButton {
-    height: clamp(44px, 6vw, 54px);
-    border-radius: 100vw;
-    overflow: hidden;
+.headerList {
+    gap: 0.6em;
+    display: flex;
+    width: 100%;
+}
+
+.headerListItem {
     flex: 1;
 }
 
-.navBarButton a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media (min-width: 640px) {
+    .headerListItem {
+        flex: 0;
+    }
+}
+
+.headerListItem:last-child {
+    margin-right: 0.6em;
+}
+
+.headerLink {
     width: 100%;
-    height: 100%;
-    color: black;
-    text-decoration: none;
-    font-family: var(--font-mono);
-    font-size: var(--font-size-medium);
-    /* transition: background-color 0.5s ease-out, color 0.5s ease-out; */
-    cursor: pointer;
+    text-align: center;
 }
 
-.Header:hover .index:hover,
-.index.active {
-    color: white;
-    background-color: #52915c;
+.last {
+    margin-left: none;
+    display: block;
+    width: 3.5em;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
 }
 
-.Header:hover .work:hover,
-.work.active {
-    background-color: #faa740;
-}
-
-.Header:hover .about:hover,
-.about.active {
-    background-color: #f7c7e1;
+@media (min-width: 640px) {
+    .last {
+        margin-left: auto;
+        width: 3em;
+    }
 }

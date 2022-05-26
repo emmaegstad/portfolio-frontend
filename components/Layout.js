@@ -6,7 +6,7 @@ import styles from '../styles/layout.module.css';
 
 export default function Layout({ children }) {
     return (
-        <div className={styles.Layout}>
+        <div className={styles.layout}>
             <Header />
             <main>{children}</main>
             <Footer />

@@ -1,6 +1,6 @@
 :root {
-    --background: #ffffff;
-    --foreground: #000000;
+    --background: #a42424;
+    --foreground: #ffffff;
     --accent: #0000ff;
 
     --font-primary: 'GT-Maru-Regular', Helvetica, sans-serif;
@@ -8,7 +8,11 @@
     --font-mono: 'GT-Maru-Mono', monospace;
 
     --font-size-small: clamp(10px, 2vw, 16px);
-    --font-size-medium: clamp(14px, 2vw, 21px);
+    --font-size-medium: clamp(14px, 2vw, 24px);
     --font-size-large: clamp(24px, 4vw, 42px);
     --font-size-xl: clamp(40px, 7vw, 75px);
+}
+
+body {
+    background-color: var(--background);
 }

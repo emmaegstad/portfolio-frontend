@@ -1,4 +1,5 @@
 import styles from '../styles/header.module.css';
+import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import cn from 'classnames';
@@ -9,36 +10,46 @@ export default function Header() {
 
     const links = [
         {
-            name: 'index',
+            name: 'INDEX',
             href: '/',
         },
         {
-            name: 'work',
+            name: 'WORK',
             href: '/work',
         },
         {
-            name: 'about',
+            name: 'ABOUT',
             href: '/about',
         },
     ];
 
     return (
-        <ul className={styles.Header}>
-            {links.map((link) => (
-                <li className={styles.navBarButton} key={uuid()}>
-                    <Link href={link.href}>
-                        <a
-                            className={cn({
-                                [styles[link.name]]: true,
-                                [styles['active']]:
-                                    router.pathname === link.href,
-                            })}
-                        >
-                            {`/${link.name}`}
-                        </a>
-                    </Link>
-                </li>
-            ))}
-        </ul>
+        <div className={styles.header}>
+            <ul className={styles.headerList}>
+                {links.map((link) => (
+                    <li className={styles.headerListItem} key={uuid()}>
+                        <Link href={link.href}>
+                            <a
+                                className={cn({
+                                    [utilStyles.button]: true,
+                                    [styles[link.name]]: true,
+                                    [styles.headerLink]: true,
+                                    [styles['active']]:
+                                        router.pathname === link.href,
+                                })}
+                            >
+                                {link.name}
+                            </a>
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+
+            <button
+                className={`${styles.headerLink} ${styles.last} ${utilStyles.button} `}
+            >
+                ?
+            </button>
+        </div>
     );
 }

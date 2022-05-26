@@ -1,0 +1,26 @@
+.button {
+    display: inline-block;
+    appearance: none;
+    border: 0;
+    border-radius: 100vw;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #ffffff50;
+    color: #ffffff70;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-medium);
+    padding: 1em 1.3em;
+    line-height: 1;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .button {
+        padding: 0.4em 0.7em;
+    }
+}
+
+.button:hover {
+    color: #a42424;
+    background-color: #ffffffaf;
+}
