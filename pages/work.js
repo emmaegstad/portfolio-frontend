@@ -1,5 +1,4 @@
 import { client } from '../lib/projects';
-import Link from 'next/link';
 import Project from '../components/Project';
 import { v4 as uuid } from 'uuid';
 import styles from '../styles/work.module.css';
