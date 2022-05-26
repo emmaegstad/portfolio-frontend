@@ -1,7 +1,7 @@
 .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
+    appearance: none;
+    border: 0;
     border-radius: 100vw;
     text-decoration: none;
     text-transform: uppercase;

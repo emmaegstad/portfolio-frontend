@@ -1,26 +1,52 @@
 .header {
-    display: flex;
-    margin: 1em;
     width: 100%;
-}
-
-.headerLink {
-    flex: 1;
-    margin-right: 0.6em;
-}
-
-.last {
-    flex: 0;
-    margin-left: auto;
-    margin-right: 1em;
+    display: flex;
+    padding: 0.6em;
 }
 
 @media (min-width: 640px) {
-    .headerLink {
+    .header {
+        justify-content: space-between;
+    }
+}
+
+.headerList {
+    gap: 0.6em;
+    display: flex;
+    width: 100%;
+}
+
+.headerListItem {
+    flex: 1;
+}
+
+@media (min-width: 640px) {
+    .headerListItem {
         flex: 0;
     }
+}
 
+.headerListItem:last-child {
+    margin-right: 0.6em;
+}
+
+.headerLink {
+    width: 100%;
+    text-align: center;
+}
+
+.last {
+    margin-left: none;
+    display: block;
+    width: 3.5em;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (min-width: 640px) {
     .last {
-        margin-right: 2em;
+        margin-left: auto;
+        width: 3em;
     }
 }
