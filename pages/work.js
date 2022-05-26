@@ -5,7 +5,7 @@ import styles from '../styles/work.module.css';
 
 export default function Work({ projects }) {
     return (
-        <div className={styles.Work}>
+        <div className={styles.work}>
             {projects.length > 0 && (
                 <ul className={styles.workProjects}>
                     {projects.map((project) => (

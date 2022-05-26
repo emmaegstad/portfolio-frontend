@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function Project({ project }) {
     return (
-        <li className={styles.Project}>
+        <li className={styles.project}>
             <h1 className={styles.projectTitle}>{project?.title}</h1>
             <section className={styles.projectDescription}>
                 <PortableText value={project?.description} />

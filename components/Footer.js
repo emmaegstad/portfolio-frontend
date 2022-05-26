@@ -4,7 +4,7 @@ import styles from '../styles/footer.module.css';
 
 export default function Footer() {
     return (
-        <div className={styles.Footer}>
+        <div className={styles.footer}>
             <ul className={styles.footerNav}>
                 <Link href="https://github.com/emmaegstad">
                     <a className={`${styles.footerLink} ${styles.github}`}>

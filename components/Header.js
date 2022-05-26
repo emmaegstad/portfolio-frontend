@@ -1,4 +1,5 @@
 import styles from '../styles/header.module.css';
+import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import cn from 'classnames';
@@ -9,36 +10,42 @@ export default function Header() {
 
     const links = [
         {
-            name: 'index',
+            name: 'INDEX',
             href: '/',
         },
         {
-            name: 'work',
+            name: 'WORK',
             href: '/work',
         },
         {
-            name: 'about',
+            name: 'ABOUT',
             href: '/about',
         },
     ];
 
     return (
-        <ul className={styles.Header}>
+        <ul className={styles.header}>
             {links.map((link) => (
-                <li className={styles.navBarButton} key={uuid()}>
+                <li className={styles.headerLink} key={uuid()}>
                     <Link href={link.href}>
                         <a
                             className={cn({
+                                [utilStyles.button]: true,
                                 [styles[link.name]]: true,
                                 [styles['active']]:
                                     router.pathname === link.href,
                             })}
                         >
-                            {`/${link.name}`}
+                            {link.name}
                         </a>
                     </Link>
                 </li>
             ))}
+            <li className={`${styles.headerLink} ${styles.last}`}>
+                <Link href="">
+                    <a className={`${utilStyles.button}`}>?</a>
+                </Link>
+            </li>
         </ul>
     );
 }
