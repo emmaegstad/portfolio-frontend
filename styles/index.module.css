@@ -1,11 +1,13 @@
 .index {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100vw;
 }
 
 .indexLogo {
+    align-self: center;
     position: relative;
     z-index: -1;
     font-family: var(--font-secondary);
@@ -13,11 +15,24 @@
     letter-spacing: -0.0125em;
     line-height: 1;
     margin-top: -0.25em;
-    color: #52915c;
+    color: #ffffff70;
 }
 
-.indexCaption {
+.indexMarquee {
+    display: flex;
+    align-items: center;
     font-family: var(--font-primary);
-    font-size: clamp(15px, 5vw, 45px);
-    margin: 0 1em 0 1em;
+    font-size: clamp(30px, 8vw, 50px);
+    white-space: nowrap;
+    overflow: hidden;
+    color: #ffffff70;
+    border-top: 1px solid #ffffff70;
+    height: 72px;
+}
+
+@media (min-width: 768px) {
+    .indexMarquee {
+        height: 1.5em;
+        padding: 0.125em;
+    }
 }
