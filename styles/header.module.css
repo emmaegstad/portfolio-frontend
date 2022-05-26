@@ -5,12 +5,22 @@
 }
 
 .headerLink {
+    flex: 1;
     margin-right: 0.6em;
 }
 
 .last {
+    flex: 0;
     margin-left: auto;
-    margin-right: 2em;
-    /* justify-self: flex-end;
-    align-self: flex-end; */
+    margin-right: 1em;
+}
+
+@media (min-width: 640px) {
+    .headerLink {
+        flex: 0;
+    }
+
+    .last {
+        margin-right: 2em;
+    }
 }
