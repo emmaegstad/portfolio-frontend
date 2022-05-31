@@ -7,6 +7,7 @@ import styles from '../styles/layout.module.css';
 
 export default function Layout({ children }) {
     const [activeFooter, setActiveFooter] = useState(true);
+    const [activeMystery, setActiveMystery] = useState(false);
     const router = useRouter();
 
     useEffect(() => {
@@ -17,9 +18,17 @@ export default function Layout({ children }) {
         }
     }, [router.pathname]);
 
+    useEffect(() => {
+        if (router.pathname === '/') {
+            setActiveMystery(true);
+        } else {
+            setActiveMystery(false);
+        }
+    }, [router.pathname]);
+
     return (
         <div className={styles.layout}>
-            <Header />
+            <Header activeMystery={activeMystery} />
             <main>{children}</main>
             {activeFooter && <Footer />}
         </div>
