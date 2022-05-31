@@ -24,7 +24,7 @@
     font-family: var(--font-primary);
     font-size: clamp(30px, 8vw, 50px);
     white-space: nowrap;
-    overflow: hidden;
+    overflow: auto;
     color: #ffffff70;
     border-top: 1px solid #ffffff70;
     height: 72px;

@@ -3,71 +3,106 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 75vw;
+    width: 100%;
+    color: #ffffff70;
+    padding: 2em 0;
 }
 
 .projectTitle {
     font-family: var(--font-secondary);
-    font-size: 12vw;
+    font-size: 10vw;
     font-feature-settings: 'ss06';
+    max-width: 15ch;
+    text-align: center;
+    line-height: 0.75;
 }
 
 .projectDescription {
-    max-width: 50ch;
+    max-width: 30ch;
     font-size: clamp(18px, 2vw, 24px);
+    padding: 1.5em;
+}
+
+@media (min-width: 768px) {
+    .projectDescription {
+        max-width: 45ch;
+    }
 }
 
 .projectImageWrapper {
-    border: 10px solid black;
-    border-radius: 5vw;
-    margin: 2em;
+    padding: 1em;
+}
+
+@media (min-width: 768px) {
+    .projectImageWrapper {
+        padding: 0 6em;
+    }
 }
 
 .projectImage {
-    border-radius: 5vw;
+    border-radius: 2vw;
 }
 
 .projectNav {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     width: 100%;
+}
+
+@media (min-width: 768px) {
+    .projectNav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 6em;
+    }
 }
 
 .projectNavLinks {
     display: flex;
+    align-items: center;
+    padding: 1em;
     gap: 1em;
+    border-top: 1px solid #ffffff54;
+    height: 48px;
+}
+
+@media (min-width: 768px) {
+    .projectNavLinks {
+        border: none;
+    }
 }
 
 .projectNavLink {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: clamp(20px, 3vw, 30px);
-    padding: 0 2em 0 2em;
-    text-decoration: none;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: #ffffff;
-    background: black;
-    border-radius: 100vw;
-    cursor: pointer;
+    font-size: var(--font-size-small);
+    text-transform: lowercase;
+    color: #a42424;
+    background-color: #ffffffaf;
 }
 
 .projectNavTags {
     display: flex;
+    align-items: center;
     gap: 1em;
+    border-top: 1px solid #ffffff54;
+    border-bottom: 1px solid #ffffff54;
+    padding: 1em;
+    height: 48px;
+}
+
+@media (min-width: 768px) {
+    .projectNavTags {
+        border: none;
+    }
 }
 
 .projectNavTag {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: clamp(20px, 3vw, 30px);
-    padding: 0 2em 0 2em;
+    text-transform: lowercase;
     font-family: var(--font-mono);
-    font-size: 10px;
-    color: black;
-    background: rgb(209, 207, 207);
-    border-radius: 100vw;
-    cursor: pointer;
+    font-size: var(--font-size-small);
 }
