@@ -1,6 +1,10 @@
 .about {
-    padding: 3em 2.5em;
     color: rgba(255, 255, 255, 0.68);
+}
+
+.aboutBio {
+    padding: 2.5em;
+    border-bottom: 1px solid #ffffff54;
 }
 
 .aboutBio p {
@@ -20,4 +24,35 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
+}
+
+.aboutImages {
+    width: 100vw;
+    white-space: nowrap;
+    overflow: auto;
+    border-bottom: 1px solid #ffffff54;
+    padding: 1em 0;
+}
+
+.aboutImageWrapper {
+    display: inline-block;
+    width: 75%;
+    padding: 1em;
+    border-radius: 50vw;
+}
+
+.aboutImage {
+    border-radius: 50vw;
+}
+
+.aboutSkills {
+    width: 100vw;
+    white-space: nowrap;
+    overflow: auto;
+    padding: 1.5em;
+}
+
+.aboutSkillsColumn {
+    display: inline-block;
+    width: 40%;
 }
