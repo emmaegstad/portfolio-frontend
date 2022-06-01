@@ -19,8 +19,9 @@
 
 @media (min-width: 768px) {
     .aboutBio {
-        padding: 0 2em;
-        padding-top: 14em;
+        min-height: 100vh;
+        overflow-y: scroll;
+        padding: 40vh 2em 0;
         border-bottom: none;
     }
 }
@@ -103,13 +104,21 @@
         gap: 2em;
         width: 100%;
         border-left: 1px solid #ffffff54;
-        padding: 0;
+        padding: 3vh 0;
     }
 }
 
 .aboutSkillsColumn {
     display: inline-block;
     width: 40%;
+}
+
+@media (min-width: 768px) {
+    .aboutSkillsColumn {
+        display: inline-block;
+        width: 60%;
+        padding-bottom: 2vh;
+    }
 }
 
 .aboutSkillsColumn h1 {

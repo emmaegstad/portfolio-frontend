@@ -3,11 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/about.module.css';
 import utilStyles from '../styles/utils.module.css';
-// import emma from '../public/assets/emma.jpg';
-import cats from '../public/assets/cats.jpg';
-import jordanjj from '../public/assets/jordanjj.jpg';
-import michelle from '../public/assets/michelle.jpg';
-import minnie from '../public/assets/minnie.jpg';
 
 export default function About() {
     return (
@@ -126,37 +121,31 @@ export default function About() {
                 <ul className={styles.aboutSkillsColumn}>
                     <h1>Libraries</h1>
                     <li>React</li>
-                    <li>Angular</li>
-                    <li>Vue</li>
-                    <li>JK I wish</li>
+                    <li>Redux</li>
+                    <li>Node.js</li>
+                    <li>Express</li>
                 </ul>
                 <ul className={styles.aboutSkillsColumn}>
-                    <h1>Languages</h1>
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>Javascript</li>
-                    <li>SQL</li>
+                    <h1>Testing</h1>
+                    <li>Jest</li>
+                    <li>QUnit</li>
+                    <li>Supertest</li>
                 </ul>
                 <ul className={styles.aboutSkillsColumn}>
-                    <h1>Libraries</h1>
-                    <li>React</li>
-                    <li>Angular</li>
-                    <li>Vue</li>
-                    <li>JK I wish</li>
+                    <h1>Databases</h1>
+                    <li>PostgreSQL</li>
+                    <li>Supabase</li>
+                    <li>Sanity</li>
                 </ul>
                 <ul className={styles.aboutSkillsColumn}>
-                    <h1>Languages</h1>
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>Javascript</li>
-                    <li>SQL</li>
-                </ul>
-                <ul className={styles.aboutSkillsColumn}>
-                    <h1>Libraries</h1>
-                    <li>React</li>
-                    <li>Angular</li>
-                    <li>Vue</li>
-                    <li>JK I wish</li>
+                    <h1>Tools</h1>
+                    <li>VS Code</li>
+                    <li>Netlify</li>
+                    <li>Heroku</li>
+                    <li>Postman</li>
+                    <li>Beekeeper Studio</li>
+                    <li>Figma</li>
+                    <li>Miro</li>
                 </ul>
             </section>
         </div>
