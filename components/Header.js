@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import cn from 'classnames';
 import { v4 as uuid } from 'uuid';
 
-export default function Header() {
+export default function Header({ activeMystery }) {
     const router = useRouter();
 
     const links = [
@@ -45,11 +45,13 @@ export default function Header() {
                 ))}
             </ul>
 
-            <button
-                className={`${styles.headerLink} ${styles.last} ${utilStyles.button} `}
-            >
-                ?
-            </button>
+            {activeMystery && (
+                <button
+                    className={`${styles.headerLink} ${styles.last} ${utilStyles.button} `}
+                >
+                    ?
+                </button>
+            )}
         </div>
     );
 }

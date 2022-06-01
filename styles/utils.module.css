@@ -1,6 +1,7 @@
 .button {
     display: inline-block;
     appearance: none;
+    text-align: center;
     border: 0;
     border-radius: 100vw;
     text-decoration: none;

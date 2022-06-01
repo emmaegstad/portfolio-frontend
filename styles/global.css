@@ -7,6 +7,7 @@
     --font-secondary: 'GT-Maru-Mega', Helvetica, sans-serif;
     --font-mono: 'GT-Maru-Mono', monospace;
 
+    --font-size-caption: clamp(10px, 1vw, 12px);
     --font-size-small: clamp(10px, 2vw, 16px);
     --font-size-medium: clamp(14px, 2vw, 24px);
     --font-size-large: clamp(24px, 4vw, 42px);

@@ -1,0 +1,132 @@
+.about {
+    color: rgba(255, 255, 255, 0.68);
+    padding: 3em 0;
+}
+
+@media (min-width: 768px) {
+    .about {
+        height: calc(100vh - 66px);
+        display: grid;
+        grid-template-columns: 6fr 3fr 2fr;
+        padding: 0;
+    }
+}
+
+.aboutBio {
+    padding: 0 2.5em;
+    border-bottom: 1px solid #ffffff54;
+}
+
+@media (min-width: 768px) {
+    .aboutBio {
+        min-height: 100vh;
+        overflow-y: scroll;
+        padding: 40vh 2em 0;
+        border-bottom: none;
+    }
+}
+
+.aboutBio p {
+    padding-bottom: 1.5em;
+}
+
+.aboutBioPrimary {
+    font-size: 1.4em;
+}
+
+.aboutBioSecondary {
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+    .aboutBioSecondary {
+        width: 35ch;
+    }
+}
+
+.aboutBioLinks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding-bottom: 2.5em;
+}
+
+.aboutImages {
+    width: 100vw;
+    white-space: nowrap;
+    overflow: auto;
+    border-bottom: 1px solid #ffffff54;
+    padding: 1em 0;
+}
+
+@media (min-width: 768px) {
+    .aboutImages {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        border-left: 1px solid #ffffff54;
+        border-bottom: none;
+        padding: 0;
+    }
+}
+
+.aboutImageWrapper {
+    display: inline-block;
+    width: 75%;
+    padding: 1em;
+    border-radius: 50vw;
+}
+
+@media (min-width: 768px) {
+    .aboutImageWrapper {
+        width: 100%;
+    }
+}
+
+.aboutImage {
+    border-radius: 50vw;
+}
+
+.aboutSkills {
+    width: 100vw;
+    white-space: nowrap;
+    overflow: auto;
+    padding: 1.5em;
+}
+
+@media (min-width: 768px) {
+    .aboutSkills {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+        width: 100%;
+        border-left: 1px solid #ffffff54;
+        padding: 3vh 0;
+    }
+}
+
+.aboutSkillsColumn {
+    display: inline-block;
+    width: 40%;
+}
+
+@media (min-width: 768px) {
+    .aboutSkillsColumn {
+        display: inline-block;
+        width: 60%;
+        padding-bottom: 2vh;
+    }
+}
+
+.aboutSkillsColumn h1 {
+    text-transform: uppercase;
+    font-size: var(--font-size-caption);
+    padding-bottom: 1em;
+}
+
+.aboutSkillsColumn p {
+    font-size: var(--font-size-small);
+}

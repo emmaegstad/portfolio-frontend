@@ -13,10 +13,10 @@ export default function Index({}) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <h1 className={styles.indexLogo}>emma</h1>
-            <p className={styles.indexCaption}>
-                Hello world, my name is Emma Egstad. I am am full-stack software
+            <p className={styles.indexMarquee}>
+                Hello, my name is Emma Egstad. I am a full-stack software
                 engineer in Tulsa, OK. I love making things on the web and every
-                cat in the world. ❤️🐱
+                cat in the world. 🐱
             </p>
         </div>
     );
