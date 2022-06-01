@@ -47,7 +47,7 @@ export default function Header({ activeMystery }) {
 
             {activeMystery && (
                 <button
-                    className={`${styles.headerLink} ${styles.last} ${utilStyles.button} `}
+                    className={`${styles.headerLink} ${styles.last} ${utilStyles.button}`}
                 >
                     ?
                 </button>
