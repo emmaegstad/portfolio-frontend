@@ -11,7 +11,7 @@ export default function Index({ gifs, currentIndex }) {
 
     useEffect(() => {
         marquee.init();
-    }, [marquee, gifs]);
+    }, [marquee]);
 
     return (
         <div className={styles.index}>
@@ -26,15 +26,14 @@ export default function Index({ gifs, currentIndex }) {
             <h1
                 className={cn({
                     [styles.indexLogo]: true,
-                    [styles.indexLogoGif]: currentIndex > 0,
+                    [styles.indexLogoGif]: currentIndex > -1,
                 })}
             >
                 emma
             </h1>
-            {currentIndex > 0 && (
+            {currentIndex > -1 && (
                 <div className={styles.backgroundWrapper}>
                     <Image
-                        // src={`/assets/gifs/gif${currentIndex}.gif`}
                         src={gifs[currentIndex].url}
                         alt="cat gif"
                         layout="fill"
@@ -42,11 +41,10 @@ export default function Index({ gifs, currentIndex }) {
                 </div>
             )}
             <div
-                // className={`${styles.indexMarquee} marquee3k`}
                 className={cn({
                     ['marquee3k']: true,
                     [styles.indexMarquee]: true,
-                    [styles.indexMarqueeGif]: currentIndex > 0,
+                    [styles.indexMarqueeGif]: currentIndex > -1,
                 })}
                 data-speed="1.5"
             >

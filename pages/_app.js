@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Layout from '../components/Layout';
 
 export default function MyApp({ Component, pageProps }) {
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(-1);
 
     return (
         <Layout currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}>

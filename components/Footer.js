@@ -9,13 +9,13 @@ export default function Footer({ currentIndex }) {
         <div
             className={cn({
                 [styles.footer]: true,
-                [styles.footerGif]: currentIndex > 0,
+                [styles.footerGif]: currentIndex > -1,
             })}
         >
             <ul
                 className={cn({
                     [styles.footerLinks]: true,
-                    [styles.footerLinksGif]: currentIndex > 0,
+                    [styles.footerLinksGif]: currentIndex > -1,
                 })}
             >
                 <Link href="https://github.com/emmaegstad">
@@ -23,7 +23,7 @@ export default function Footer({ currentIndex }) {
                         className={cn({
                             [utilStyles.button]: true,
                             [styles.footerLink]: true,
-                            [utilStyles.buttonGif]: currentIndex > 0,
+                            [utilStyles.buttonGif]: currentIndex > -1,
                         })}
                     >
                         github
@@ -34,7 +34,7 @@ export default function Footer({ currentIndex }) {
                         className={cn({
                             [utilStyles.button]: true,
                             [styles.footerLink]: true,
-                            [utilStyles.buttonGif]: currentIndex > 0,
+                            [utilStyles.buttonGif]: currentIndex > -1,
                         })}
                     >
                         linkedin
@@ -45,7 +45,7 @@ export default function Footer({ currentIndex }) {
                         className={cn({
                             [utilStyles.button]: true,
                             [styles.footerLink]: true,
-                            [utilStyles.buttonGif]: currentIndex > 0,
+                            [utilStyles.buttonGif]: currentIndex > -1,
                         })}
                     >
                         email
@@ -55,7 +55,7 @@ export default function Footer({ currentIndex }) {
             <section
                 className={cn({
                     [styles.footerText]: true,
-                    [styles.footerTextGif]: currentIndex > 0,
+                    [styles.footerTextGif]: currentIndex > -1,
                 })}
             >
                 <span>thanks for scrolling!</span>

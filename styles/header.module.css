@@ -38,18 +38,18 @@
     text-align: center;
 }
 
-.last {
+/* .last {
     margin-left: none;
     display: block;
     width: 3.5em;
     text-align: center;
     padding-left: 0;
     padding-right: 0;
-}
+} */
 
 @media (min-width: 640px) {
     .last {
         margin-left: auto;
-        width: 3em;
+        width: 2em;
     }
 }

@@ -28,10 +28,14 @@ export default function Header({
 
     const handleClick = () => {
         if (currentIndex >= 3) {
-            setCurrentIndex(1);
+            setCurrentIndex(0);
         } else {
             setCurrentIndex((currentIndex += 1));
         }
+    };
+
+    const handleClear = () => {
+        setCurrentIndex(-1);
     };
 
     return (
@@ -47,7 +51,7 @@ export default function Header({
                                     [styles.headerLink]: true,
                                     [styles['active']]:
                                         router.pathname === link.href,
-                                    [utilStyles.buttonGif]: currentIndex > 0,
+                                    [utilStyles.buttonGif]: currentIndex > -1,
                                 })}
                             >
                                 {link.name}
@@ -56,13 +60,26 @@ export default function Header({
                     </li>
                 ))}
             </ul>
+            {currentIndex > -1 && (
+                <button
+                    className={cn({
+                        [styles.headerLink]: true,
+                        [styles.last]: true,
+                        [utilStyles.button]: true,
+                        [utilStyles.buttonGif]: currentIndex > -1,
+                    })}
+                    onClick={handleClear}
+                >
+                    x
+                </button>
+            )}
             {activeMystery && (
                 <button
                     className={cn({
                         [styles.headerLink]: true,
                         [styles.last]: true,
                         [utilStyles.button]: true,
-                        [utilStyles.buttonGif]: currentIndex > 0,
+                        [utilStyles.buttonGif]: currentIndex > -1,
                     })}
                     onClick={handleClick}
                 >
