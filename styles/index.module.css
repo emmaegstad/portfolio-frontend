@@ -1,8 +1,8 @@
 .index {
+    height: 90vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+    justify-content: end;
     width: 100vw;
 }
 
@@ -14,7 +14,6 @@
     font-size: clamp(125px, 35vw, 1000px);
     letter-spacing: -0.0125em;
     line-height: 1;
-    margin-top: -0.25em;
     color: #ffffff70;
 }
 
