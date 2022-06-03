@@ -5,7 +5,7 @@ import Footer from './Footer';
 
 import styles from '../styles/layout.module.css';
 
-export default function Layout({ children }) {
+export default function Layout({ children, currentIndex, setCurrentIndex }) {
     const [activeFooter, setActiveFooter] = useState(true);
     const [activeMystery, setActiveMystery] = useState(false);
     const router = useRouter();
@@ -28,7 +28,11 @@ export default function Layout({ children }) {
 
     return (
         <div className={styles.layout}>
-            <Header activeMystery={activeMystery} />
+            <Header
+                activeMystery={activeMystery}
+                currentIndex={currentIndex}
+                setCurrentIndex={setCurrentIndex}
+            />
             <main>{children}</main>
             {activeFooter && <Footer />}
         </div>

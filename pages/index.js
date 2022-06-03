@@ -2,13 +2,13 @@ import Head from 'next/head';
 import styles from '../styles/index.module.css';
 import Marquee3k from 'marquee3000';
 import { useEffect } from 'react';
+import Image from 'next/image';
 
-export default function Index() {
+export default function Index({ currentIndex }) {
     const marquee = Marquee3k;
 
     useEffect(() => {
         marquee.init();
-        console.log('marquee', marquee);
     }, [marquee]);
 
     return (
@@ -22,6 +22,16 @@ export default function Index() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <h1 className={styles.indexLogo}>emma</h1>
+            {currentIndex > 0 && (
+                <div className={styles.background}>
+                    <Image
+                        src={`/assets/gifs/gif${currentIndex}.gif`}
+                        width="200"
+                        height="200"
+                        alt="cat gif"
+                    />
+                </div>
+            )}
             <div
                 className={`${styles.indexMarquee} marquee3k`}
                 data-speed="1.5"
@@ -35,3 +45,10 @@ export default function Index() {
         </div>
     );
 }
+
+// click button
+// track number of clicks on a loop, comparing to gifsArr.length
+// once last item is hit, reset to 1
+// set 'activeGif' state to current loop index
+// create or display corresponding gif on index page
+// use css to set as 'background'

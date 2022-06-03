@@ -5,9 +5,12 @@ import { useRouter } from 'next/router';
 import cn from 'classnames';
 import { v4 as uuid } from 'uuid';
 
-export default function Header({ activeMystery }) {
+export default function Header({
+    activeMystery,
+    currentIndex,
+    setCurrentIndex,
+}) {
     const router = useRouter();
-
     const links = [
         {
             name: 'INDEX',
@@ -22,6 +25,14 @@ export default function Header({ activeMystery }) {
             href: '/about',
         },
     ];
+
+    const handleClick = () => {
+        if (currentIndex >= 3) {
+            setCurrentIndex(1);
+        } else {
+            setCurrentIndex((currentIndex += 1));
+        }
+    };
 
     return (
         <div className={styles.header}>
@@ -44,10 +55,10 @@ export default function Header({ activeMystery }) {
                     </li>
                 ))}
             </ul>
-
             {activeMystery && (
                 <button
                     className={`${styles.headerLink} ${styles.last} ${utilStyles.button}`}
+                    onClick={handleClick}
                 >
                     ?
                 </button>

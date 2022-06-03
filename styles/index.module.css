@@ -2,7 +2,7 @@
     height: 90vh;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: flex-end;
     width: 100vw;
 }
 
@@ -34,4 +34,13 @@
         height: 1.5em;
         padding: 0.125em;
     }
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: -2;
 }
