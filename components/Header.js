@@ -14,7 +14,7 @@ export default function Header({
     const router = useRouter();
     const links = [
         {
-            name: 'INDEX',
+            name: 'HOME',
             href: '/',
         },
         {
@@ -48,11 +48,9 @@ export default function Header({
                             <a
                                 className={cn({
                                     [utilStyles.button]: true,
-                                    [styles[link.name]]: true,
-                                    [styles.headerLink]: true,
-                                    [styles['active']]:
-                                        router.pathname === link.href,
                                     [utilStyles.buttonGif]: currentIndex > -1,
+                                    [utilStyles.active]:
+                                        router.pathname === link.href,
                                 })}
                             >
                                 {link.name}

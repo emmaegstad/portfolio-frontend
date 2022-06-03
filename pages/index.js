@@ -49,8 +49,7 @@ export default function Index({ gifs, currentIndex }) {
             >
                 <p>
                     Hello, my name is Emma Egstad. I am a full-stack software
-                    engineer in Tulsa, OK. I love making things on the web and
-                    every cat in the world. 🐱
+                    engineer located in Tulsa, OK.
                 </p>
             </div>
         </div>

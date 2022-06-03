@@ -41,8 +41,9 @@
 }
 
 .indexMarqueeGif {
-    color: white;
-    border-top: 1px solid white;
+    color: black;
+    background-color: white;
+    border-top: none;
 }
 
 .backgroundWrapper {
