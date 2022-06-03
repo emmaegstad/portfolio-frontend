@@ -3,7 +3,6 @@ import styles from '../styles/index.module.css';
 import Marquee3k from 'marquee3000';
 import { useEffect } from 'react';
 import Image from 'next/image';
-import { client } from '../lib/projects';
 import cn from 'classnames';
 
 export default function Index({ gifs, currentIndex }) {
@@ -56,14 +55,4 @@ export default function Index({ gifs, currentIndex }) {
             </div>
         </div>
     );
-}
-
-export async function getStaticProps() {
-    const gifs = await client.fetch(`*[_type == "gif"]`);
-
-    return {
-        props: {
-            gifs,
-        },
-    };
 }

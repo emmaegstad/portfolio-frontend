@@ -9,6 +9,7 @@ export default function Header({
     activeMystery,
     currentIndex,
     setCurrentIndex,
+    gifs,
 }) {
     const router = useRouter();
     const links = [
@@ -27,7 +28,7 @@ export default function Header({
     ];
 
     const handleClick = () => {
-        if (currentIndex >= 3) {
+        if (currentIndex >= gifs.length - 1) {
             setCurrentIndex(0);
         } else {
             setCurrentIndex((currentIndex += 1));
