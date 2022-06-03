@@ -9,7 +9,7 @@ export default function Index() {
     useEffect(() => {
         marquee.init();
         console.log('marquee', marquee);
-    }, []);
+    }, [marquee]);
 
     return (
         <div className={styles.index}>
@@ -24,7 +24,7 @@ export default function Index() {
             <h1 className={styles.indexLogo}>emma</h1>
             <div
                 className={`${styles.indexMarquee} marquee3k`}
-                data-speed="0.60"
+                data-speed="1.5"
             >
                 <p>
                     Hello, my name is Emma Egstad. I am a full-stack software
