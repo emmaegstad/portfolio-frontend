@@ -3,8 +3,11 @@ import Link from 'next/link';
 import styles from '../styles/footer.module.css';
 import utilStyles from '../styles/utils.module.css';
 import cn from 'classnames';
+import { useGlobal } from '../context/GlobalContext';
 
-export default function Footer({ currentIndex }) {
+export default function Footer() {
+    const { currentIndex } = useGlobal();
+
     return (
         <div
             className={cn({
