@@ -14,6 +14,10 @@
     padding: 0 1em;
 }
 
+.footerLinksGif {
+    border-top: 1px solid white;
+}
+
 .footerLink {
     flex: 1;
     display: flex;
@@ -33,11 +37,19 @@
     height: 72px;
 }
 
+.footerTextGif {
+    color: white;
+}
+
 @media (min-width: 640px) {
     .footer {
         flex-direction: row;
         border-top: 1px solid #ffffff70;
         padding: 1em;
+    }
+
+    .footerGif {
+        border-top: 1px solid white;
     }
 
     .footerLinks {

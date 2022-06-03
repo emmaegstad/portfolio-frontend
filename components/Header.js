@@ -4,13 +4,14 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import cn from 'classnames';
 import { v4 as uuid } from 'uuid';
+import { useGlobal } from '../context/GlobalContext';
 
 export default function Header({ activeMystery }) {
     const router = useRouter();
-
+    const { currentIndex, setCurrentIndex, gifs } = useGlobal();
     const links = [
         {
-            name: 'INDEX',
+            name: 'HOME',
             href: '/',
         },
         {
@@ -23,6 +24,18 @@ export default function Header({ activeMystery }) {
         },
     ];
 
+    const handleClick = () => {
+        if (currentIndex >= gifs.length - 1) {
+            setCurrentIndex(0);
+        } else {
+            setCurrentIndex((currentIndex += 1));
+        }
+    };
+
+    const handleClear = () => {
+        setCurrentIndex(-1);
+    };
+
     return (
         <div className={styles.header}>
             <ul className={styles.headerList}>
@@ -32,9 +45,8 @@ export default function Header({ activeMystery }) {
                             <a
                                 className={cn({
                                     [utilStyles.button]: true,
-                                    [styles[link.name]]: true,
-                                    [styles.headerLink]: true,
-                                    [styles['active']]:
+                                    [utilStyles.buttonGif]: currentIndex > -1,
+                                    [utilStyles.active]:
                                         router.pathname === link.href,
                                 })}
                             >
@@ -44,10 +56,28 @@ export default function Header({ activeMystery }) {
                     </li>
                 ))}
             </ul>
-
+            {currentIndex > -1 && (
+                <button
+                    className={cn({
+                        [styles.headerLink]: true,
+                        [styles.last]: true,
+                        [utilStyles.button]: true,
+                        [utilStyles.buttonGif]: currentIndex > -1,
+                    })}
+                    onClick={handleClear}
+                >
+                    x
+                </button>
+            )}
             {activeMystery && (
                 <button
-                    className={`${styles.headerLink} ${styles.last} ${utilStyles.button}`}
+                    className={cn({
+                        [styles.headerLink]: true,
+                        [styles.last]: true,
+                        [utilStyles.button]: true,
+                        [utilStyles.buttonGif]: currentIndex > -1,
+                    })}
+                    onClick={handleClick}
                 >
                     ?
                 </button>
