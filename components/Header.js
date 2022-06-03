@@ -1,5 +1,5 @@
-import styles from '../styles/header.module.css';
 import utilStyles from '../styles/utils.module.css';
+import styles from '../styles/header.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import cn from 'classnames';
@@ -59,10 +59,9 @@ export default function Header({ activeMystery }) {
             {currentIndex > -1 && (
                 <button
                     className={cn({
-                        [styles.headerLink]: true,
-                        [styles.last]: true,
                         [utilStyles.button]: true,
                         [utilStyles.buttonGif]: currentIndex > -1,
+                        [styles.last]: true,
                     })}
                     onClick={handleClear}
                 >
@@ -72,14 +71,13 @@ export default function Header({ activeMystery }) {
             {activeMystery && (
                 <button
                     className={cn({
-                        [styles.headerLink]: true,
                         [styles.last]: true,
                         [utilStyles.button]: true,
                         [utilStyles.buttonGif]: currentIndex > -1,
                     })}
                     onClick={handleClick}
                 >
-                    ?
+                    🐱
                 </button>
             )}
         </div>

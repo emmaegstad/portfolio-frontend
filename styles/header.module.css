@@ -33,23 +33,17 @@
     margin-right: 0.6em;
 }
 
-/* .headerLink {
+.last {
     width: 100%;
-    text-align: center;
-} */
-
-/* .last {
     margin-left: none;
     display: block;
-    width: 3.5em;
+    width: 2em;
     text-align: center;
     padding-left: 0;
     padding-right: 0;
-} */
+    color: black;
+}
 
-@media (min-width: 640px) {
-    .last {
-        margin-left: auto;
-        width: 2em;
-    }
+.last:first-of-type {
+    margin-right: 0.5em;
 }
