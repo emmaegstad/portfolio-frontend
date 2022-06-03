@@ -47,6 +47,7 @@ export default function Header({
                                     [styles.headerLink]: true,
                                     [styles['active']]:
                                         router.pathname === link.href,
+                                    [utilStyles.buttonGif]: currentIndex > 0,
                                 })}
                             >
                                 {link.name}
@@ -57,7 +58,12 @@ export default function Header({
             </ul>
             {activeMystery && (
                 <button
-                    className={`${styles.headerLink} ${styles.last} ${utilStyles.button}`}
+                    className={cn({
+                        [styles.headerLink]: true,
+                        [styles.last]: true,
+                        [utilStyles.button]: true,
+                        [utilStyles.buttonGif]: currentIndex > 0,
+                    })}
                     onClick={handleClick}
                 >
                     ?

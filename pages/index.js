@@ -3,13 +3,15 @@ import styles from '../styles/index.module.css';
 import Marquee3k from 'marquee3000';
 import { useEffect } from 'react';
 import Image from 'next/image';
+import { client } from '../lib/projects';
+import cn from 'classnames';
 
-export default function Index({ currentIndex }) {
+export default function Index({ gifs, currentIndex }) {
     const marquee = Marquee3k;
 
     useEffect(() => {
         marquee.init();
-    }, [marquee]);
+    }, [marquee, gifs]);
 
     return (
         <div className={styles.index}>
@@ -21,20 +23,31 @@ export default function Index({ currentIndex }) {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <h1 className={styles.indexLogo}>emma</h1>
+            <h1
+                className={cn({
+                    [styles.indexLogo]: true,
+                    [styles.indexLogoGif]: currentIndex > 0,
+                })}
+            >
+                emma
+            </h1>
             {currentIndex > 0 && (
                 <div className={styles.backgroundWrapper}>
                     <Image
-                        src={`/assets/gifs/gif${currentIndex}.gif`}
-                        width="200"
-                        height="200"
+                        // src={`/assets/gifs/gif${currentIndex}.gif`}
+                        src={gifs[currentIndex].url}
                         alt="cat gif"
                         layout="fill"
                     />
                 </div>
             )}
             <div
-                className={`${styles.indexMarquee} marquee3k`}
+                // className={`${styles.indexMarquee} marquee3k`}
+                className={cn({
+                    ['marquee3k']: true,
+                    [styles.indexMarquee]: true,
+                    [styles.indexMarqueeGif]: currentIndex > 0,
+                })}
                 data-speed="1.5"
             >
                 <p>
@@ -47,9 +60,12 @@ export default function Index({ currentIndex }) {
     );
 }
 
-// click button
-// track number of clicks on a loop, comparing to gifsArr.length
-// once last item is hit, reset to 1
-// set 'activeGif' state to current loop index
-// create or display corresponding gif on index page
-// use css to set as 'background'
+export async function getStaticProps() {
+    const gifs = await client.fetch(`*[_type == "gif"]`);
+
+    return {
+        props: {
+            gifs,
+        },
+    };
+}

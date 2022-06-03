@@ -34,7 +34,7 @@ export default function Layout({ children, currentIndex, setCurrentIndex }) {
                 setCurrentIndex={setCurrentIndex}
             />
             <main>{children}</main>
-            {activeFooter && <Footer />}
+            {activeFooter && <Footer currentIndex={currentIndex} />}
         </div>
     );
 }
