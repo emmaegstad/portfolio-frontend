@@ -4,9 +4,11 @@ import Marquee3k from 'marquee3000';
 import { useEffect } from 'react';
 import Image from 'next/image';
 import cn from 'classnames';
+import { useGlobal } from '../context/GlobalContext';
 
-export default function Index({ gifs, currentIndex }) {
+export default function Index() {
     const marquee = Marquee3k;
+    const { currentIndex, gifs } = useGlobal();
 
     useEffect(() => {
         marquee.init();

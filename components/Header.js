@@ -4,14 +4,11 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import cn from 'classnames';
 import { v4 as uuid } from 'uuid';
+import { useGlobal } from '../context/GlobalContext';
 
-export default function Header({
-    activeMystery,
-    currentIndex,
-    setCurrentIndex,
-    gifs,
-}) {
+export default function Header({ activeMystery }) {
     const router = useRouter();
+    const { currentIndex, setCurrentIndex, gifs } = useGlobal();
     const links = [
         {
             name: 'HOME',
