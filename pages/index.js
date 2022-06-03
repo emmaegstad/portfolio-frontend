@@ -23,12 +23,13 @@ export default function Index({ currentIndex }) {
             </Head>
             <h1 className={styles.indexLogo}>emma</h1>
             {currentIndex > 0 && (
-                <div className={styles.background}>
+                <div className={styles.backgroundWrapper}>
                     <Image
                         src={`/assets/gifs/gif${currentIndex}.gif`}
                         width="200"
                         height="200"
                         alt="cat gif"
+                        layout="fill"
                     />
                 </div>
             )}
