@@ -5,6 +5,7 @@
     width: 100vw;
     display: flex;
     padding: 1em;
+    z-index: 9999;
 }
 
 @media (min-width: 640px) {
@@ -23,6 +24,11 @@
     flex: 1;
 }
 
+.headerListItem a {
+    display: block;
+    width: 100%;
+}
+
 @media (min-width: 640px) {
     .headerListItem {
         flex: 0;
@@ -33,17 +39,21 @@
     margin-right: 0.6em;
 }
 
-.last {
+.gifToggle {
     width: 100%;
     margin-left: none;
-    display: block;
     width: 2em;
     text-align: center;
     padding-left: 0;
     padding-right: 0;
     color: black;
+    display: none;
 }
 
-.last:first-of-type {
+.gifToggle.is-visible {
+    display: block;
+}
+
+.gifToggle:first-of-type {
     margin-right: 0.5em;
 }
