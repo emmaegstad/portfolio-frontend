@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState, useRef } from 'react';
 import { client } from '../lib/projects';
 
 export const GlobalContext = createContext();
@@ -6,7 +6,14 @@ export const GlobalContext = createContext();
 const GlobalProvider = ({ children }) => {
     const [currentIndex, setCurrentIndex] = useState(-1);
     const [gifs, setGifs] = useState();
-    const value = { currentIndex, setCurrentIndex, gifs, setGifs };
+    const layoutHasMounted = useRef();
+    const value = {
+        currentIndex,
+        setCurrentIndex,
+        gifs,
+        setGifs,
+        layoutHasMounted,
+    };
 
     useEffect(() => {
         const fetchData = async () => {

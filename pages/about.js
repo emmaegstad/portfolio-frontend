@@ -1,12 +1,34 @@
-import React from 'react';
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/about.module.css';
 import utilStyles from '../styles/utils.module.css';
+import { useGlobal } from '../context/GlobalContext';
+import gsap from 'gsap';
 
 export default function About() {
+    const elContent = useRef();
+    const { layoutHasMounted } = useGlobal();
+
+    useEffect(() => {
+        gsap.fromTo(
+            elContent.current,
+            {
+                opacity: 0,
+                y: 75,
+            },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                delay: layoutHasMounted ? 0 : 0.5,
+                ease: 'power4.out',
+            }
+        );
+    }, [layoutHasMounted]);
+
     return (
-        <div className={styles.about}>
+        <div ref={elContent} className={styles.about}>
             <section className={styles.aboutBio}>
                 <p className={styles.aboutBioPrimary}>
                     Hi, I am Emma Egstad. Full-stack web developer based in
@@ -59,7 +81,7 @@ export default function About() {
                 </ul>
             </section>
             <section className={styles.aboutImages}>
-                <div className={styles.aboutImageWrapper}>
+                <figure className={styles.aboutImageWrapper}>
                     <Image
                         className={styles.aboutImage}
                         src="/assets/emma.jpg"
@@ -68,8 +90,11 @@ export default function About() {
                         layout="responsive"
                         alt="emma"
                     />
-                </div>
-                <div className={styles.aboutImageWrapper}>
+                    <figcaption>
+                        <p className={utilStyles['text-sm']}>Hello lasdlfkj</p>
+                    </figcaption>
+                </figure>
+                <figure className={styles.aboutImageWrapper}>
                     <Image
                         className={styles.aboutImage}
                         src="/assets/cats.jpg"
@@ -78,7 +103,7 @@ export default function About() {
                         layout="responsive"
                         alt="cats"
                     />
-                </div>
+                </figure>
                 <div className={styles.aboutImageWrapper}>
                     <Image
                         className={styles.aboutImage}

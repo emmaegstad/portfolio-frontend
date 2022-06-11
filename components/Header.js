@@ -1,13 +1,18 @@
-import styles from '../styles/header.module.css';
 import utilStyles from '../styles/utils.module.css';
+import styles from '../styles/header.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useEffect, useRef } from 'react';
 import cn from 'classnames';
-import { v4 as uuid } from 'uuid';
 import { useGlobal } from '../context/GlobalContext';
+import gsap from 'gsap';
+// import { v4 as uuid } from 'uuid';
 
 export default function Header({ activeMystery }) {
     const router = useRouter();
+    const elsLinks = useRef([]);
+    const elButton = useRef();
+
     const { currentIndex, setCurrentIndex, gifs } = useGlobal();
     const links = [
         {
@@ -24,6 +29,32 @@ export default function Header({ activeMystery }) {
         },
     ];
 
+    useEffect(() => {
+        const els = [...elsLinks.current];
+
+        window.addEventListener('layoutMounted', (e) => {
+            els.push(elButton.current);
+            animateLinks();
+        });
+
+        const animateLinks = () => {
+            gsap.fromTo(
+                els,
+                {
+                    opacity: 0,
+                    y: '-100%',
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    stagger: 0.25,
+                    ease: 'power4.out',
+                }
+            );
+        };
+    }, []);
+
     const handleClick = () => {
         if (currentIndex >= gifs.length - 1) {
             setCurrentIndex(0);
@@ -39,8 +70,14 @@ export default function Header({ activeMystery }) {
     return (
         <div className={styles.header}>
             <ul className={styles.headerList}>
-                {links.map((link) => (
-                    <li className={styles.headerListItem} key={uuid()}>
+                {links.map((link, index) => (
+                    <li
+                        ref={(element) => {
+                            elsLinks.current[index] = element;
+                        }}
+                        className={styles.headerListItem}
+                        key={index}
+                    >
                         <Link href={link.href}>
                             <a
                                 className={cn({
@@ -59,29 +96,29 @@ export default function Header({ activeMystery }) {
             {currentIndex > -1 && (
                 <button
                     className={cn({
-                        [styles.headerLink]: true,
-                        [styles.last]: true,
                         [utilStyles.button]: true,
                         [utilStyles.buttonGif]: currentIndex > -1,
+                        [styles.last]: true,
                     })}
                     onClick={handleClear}
                 >
                     x
                 </button>
             )}
-            {activeMystery && (
-                <button
-                    className={cn({
-                        [styles.headerLink]: true,
-                        [styles.last]: true,
-                        [utilStyles.button]: true,
-                        [utilStyles.buttonGif]: currentIndex > -1,
-                    })}
-                    onClick={handleClick}
-                >
-                    ?
-                </button>
-            )}
+            {/* {activeMystery && ( */}
+            <button
+                ref={elButton}
+                className={cn({
+                    [styles['is-visible']]: router.pathname === '/',
+                    [styles.gifToggle]: true,
+                    [utilStyles.button]: true,
+                    [utilStyles.buttonGif]: currentIndex > -1,
+                })}
+                onClick={handleClick}
+            >
+                🐱
+            </button>
+            {/* )} */}
         </div>
     );
 }

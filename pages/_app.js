@@ -4,7 +4,7 @@ import '../styles/fonts.css';
 import Layout from '../components/Layout';
 import { GlobalProvider } from '../context/GlobalContext';
 
-export default function MyApp({ Component, pageProps, gifs }) {
+export default function MyApp({ Component, pageProps }) {
     return (
         <GlobalProvider>
             <Layout>

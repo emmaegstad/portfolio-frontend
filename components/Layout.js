@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
+import { useGlobal } from '../context/GlobalContext';
 import Header from './Header';
-import Footer from './Footer';
+import { debounce, resizeCallback } from '../utils/debounce';
 
 import styles from '../styles/layout.module.css';
 
@@ -13,7 +14,22 @@ export default function Layout({
 }) {
     const [activeFooter, setActiveFooter] = useState(true);
     const [activeMystery, setActiveMystery] = useState(false);
+    const { layoutHasMounted } = useGlobal();
+
     const router = useRouter();
+
+    useEffect(() => {
+        window.addEventListener('resize', debounce(resizeCallback, 300));
+    }, []);
+
+    // tell the app that the layout has mounted
+    useEffect(() => {
+        const layoutMounted = new CustomEvent('layoutMounted');
+
+        dispatchEvent(layoutMounted);
+
+        layoutHasMounted.current = true;
+    }, [layoutHasMounted]);
 
     useEffect(() => {
         if (router.pathname === '/about') {
@@ -40,7 +56,7 @@ export default function Layout({
                 gifs={gifs}
             />
             <main>{children}</main>
-            {activeFooter && <Footer currentIndex={currentIndex} />}
+            {/* {activeFooter && <Footer currentIndex={currentIndex} />} */}
         </div>
     );
 }
