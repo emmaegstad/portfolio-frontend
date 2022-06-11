@@ -7,6 +7,14 @@
 }
 
 @font-face {
+    font-family: 'GT-Maru-Medium';
+    src: url('/fonts/GT-Maru-Medium-Trial.woff2');
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
     font-family: 'GT-Maru-Mega';
     src: url('/fonts/GT-Maru-Mega-Midi-Trial.woff2');
     font-style: normal;

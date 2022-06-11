@@ -31,3 +31,23 @@
     background-color: white;
     color: black;
 }
+
+.text-bold {
+    font-family: var(--font-primary-bold);
+}
+
+.text-sm {
+    font-size: var(--font-size-small);
+    line-height: 1.29;
+}
+
+.text-md {
+    font-size: var(--font-size-medium);
+    line-height: 1.17;
+}
+
+.text-lg {
+    font-size: var(--font-size-large);
+    line-height: 1.028;
+    letter-spacing: -0.075em;
+}

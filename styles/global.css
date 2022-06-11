@@ -4,11 +4,12 @@
     --accent: #0000ff;
 
     --font-primary: 'GT-Maru-Regular', Helvetica, sans-serif;
+    --font-primary-bold: 'GT-Maru-Medium', Helvetica, sans-serif;
     --font-secondary: 'GT-Maru-Mega', Helvetica, sans-serif;
     --font-mono: 'GT-Maru-Mono', monospace;
 
     --font-size-caption: clamp(10px, 1vw, 12px);
-    --font-size-small: clamp(10px, 2vw, 16px);
+    --font-size-small: clamp(10px, 1.5vw, 16px);
     --font-size-medium: clamp(14px, 2vw, 24px);
     --font-size-large: clamp(24px, 4vw, 42px);
     --font-size-xl: clamp(40px, 7vw, 75px);
