@@ -20,10 +20,17 @@ export default function Index() {
     const elFooter = useRef('');
     const elsMobileLogo = useRef('');
     const { currentIndex, gifs } = useGlobal();
+    const minWindowSize = useRef('');
+
+    useEffect(() => {
+        const value = window
+            .getComputedStyle(document.documentElement)
+            .getPropertyValue('--min-window-size');
+
+        minWindowSize.current = value.slice(0, -2);
+    }, []);
 
     const onMobileLogoClick = () => {
-        console.log('hi');
-
         rearrangeMobileLetters();
     };
 
@@ -46,11 +53,32 @@ export default function Index() {
         });
     }, []);
 
-    useEffect(() => {
-        rearrangeMobileLetters();
+    // determine if mobile animations should init or not
+    const logoHandler = () => {
+        console.log('resized');
 
-        window.addEventListener('windowResized', rearrangeMobileLetters);
-    }, [rearrangeMobileLetters]);
+        if (window.innerWidth <= minWindowSize.current) {
+            rearrangeMobileLetters();
+        }
+    };
+    /* ------------------------------------------------------------------------
+     * Logo Animations
+     * ------------------------------------------------------------------------
+     * 1. determine if the mobile/desktop animations fire based on window width
+     * 2. this fires on mount and on the custom `windowResized` event
+     */
+    useEffect(() => {
+        // determine if animation should fire
+        logoHandler();
+
+        // listen for resize events and pass to logohandler
+        window.addEventListener('windowResized', logoHandler);
+
+        // destroy listener
+        return () => {
+            window.removeEventListener('windowResized', logoHandler);
+        };
+    }, []);
 
     // useEffect(() => {
     //     gsap.fromTo(
