@@ -10,4 +10,5 @@
     align-items: center;
     gap: 2em;
     margin: 2em 0 2em 0;
+    padding-top: clamp(40px, 4vw, 160px);
 }
