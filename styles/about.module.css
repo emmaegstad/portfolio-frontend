@@ -1,6 +1,6 @@
 .about {
     color: rgba(255, 255, 255, 0.68);
-    padding: 3em 0;
+    padding-top: clamp(120px, 20vw, 160px);
 }
 
 @media (min-width: 768px) {
@@ -8,7 +8,7 @@
         height: calc(100vh - 66px);
         display: grid;
         grid-template-columns: 6fr 3fr 2fr;
-        padding: 0;
+        padding-top: 0;
     }
 }
 
@@ -74,9 +74,15 @@
 
 .aboutImageWrapper {
     display: inline-block;
-    width: 75%;
+    width: 65vw;
     padding: 1em;
     border-radius: 50vw;
+}
+
+@media (min-width: 600px) {
+    .aboutImageWrapper {
+        width: 40vw;
+    }
 }
 
 @media (min-width: 768px) {
