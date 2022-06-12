@@ -1,12 +1,12 @@
-import Head from 'next/head';
-import utilStyles from '../styles/utils.module.css';
 import styles from '../styles/index.module.css';
-import Marquee3k from 'marquee3000';
-import { useEffect, useRef, useCallback } from 'react';
+import utilStyles from '../styles/utils.module.css';
+import Head from 'next/head';
 import Image from 'next/image';
-import cn from 'classnames';
+import { useEffect, useRef, useCallback } from 'react';
 import { useGlobal } from '../context/GlobalContext';
+import cn from 'classnames';
 import gsap from 'gsap';
+import Marquee3k from 'marquee3000';
 import Footer from '../components/Footer';
 import Logo from '../public/assets/logo/logo-emma.js';
 import LogoLetterE from '../public/assets/logo/logo-letter-e.js';
@@ -20,13 +20,9 @@ export default function Index() {
     const elFooter = useRef('');
     const elsMobileLogo = useRef('');
     const { currentIndex, gifs } = useGlobal();
+    // const minWindowSize = useRef('');
 
-    const onMobileLogoClick = () => {
-        console.log('hi');
-
-        rearrangeMobileLetters();
-    };
-
+    // Create randomized letter position for mobile logo
     const setRandomLetterPosition = (el) => {
         const rect = el.getBoundingClientRect();
         const width = rect.width;
@@ -35,6 +31,7 @@ export default function Index() {
         return Math.random() * container;
     };
 
+    // Animate mobile logo letters into random position
     const rearrangeMobileLetters = useCallback(() => {
         if (!elsMobileLogo.current) return;
 
@@ -46,32 +43,41 @@ export default function Index() {
         });
     }, []);
 
-    useEffect(() => {
-        rearrangeMobileLetters();
+    // Grab breakpoint size from css variable
+    const getBreakpointSize = () => {
+        return window
+            .getComputedStyle(document.documentElement)
+            .getPropertyValue('--min-window-size')
+            .slice(0, -2);
+    };
 
-        window.addEventListener('windowResized', rearrangeMobileLetters);
+    useEffect(() => {
+        // Initialize marquee
+        marquee.init();
+    }, [marquee]);
+
+    useEffect(() => {
+        // Logo handler to determine if the mobile/desktop animations fire based on window width
+        const logoHandler = () => {
+            if (window.innerWidth <= getBreakpointSize()) {
+                rearrangeMobileLetters();
+            }
+        };
+
+        // This fires on mount and on the custom `windowResized` event
+        logoHandler();
+
+        // Listen for resize events and pass to logohandler
+        window.addEventListener('windowResized', logoHandler);
+
+        // Destroy listener
+        return () => {
+            window.removeEventListener('windowResized', logoHandler);
+        };
     }, [rearrangeMobileLetters]);
 
-    // useEffect(() => {
-    //     gsap.fromTo(
-    //         elsMobileLogo.current.childNodes,
-    //         {
-    //             x: '0%',
-    //         },
-    //         {
-    //             x: '50%',
-    //             duration: 4,
-    //             stagger: {
-    //                 amount: 1,
-    //                 yoyo: true,
-    //                 repeat: -1,
-    //                 ease: 'power4.inOut',
-    //             },
-    //         }
-    //     );
-    // }, []);
-
     useEffect(() => {
+        // Logo animation controls
         const animateLogo = () => {
             gsap.set(elLogo.current, { opacity: 0 });
 
@@ -97,14 +103,6 @@ export default function Index() {
         animateLogo();
     }, []);
 
-    useEffect(() => {
-        marquee.init();
-    }, [marquee]);
-
-    // const setRandomPositioning = () => {
-    //     return `${Math.random() * 75}%`;
-    // };
-
     return (
         <div className={styles.index}>
             <Head>
@@ -123,15 +121,13 @@ export default function Index() {
                 })}
             >
                 <span className={styles.visuallyHidden}>Emma Egstad</span>
-
                 <span className={styles.logoDesktop}>
-                    <Logo />
+                    <Logo className={styles.logoDesktopImage} />
                 </span>
-
                 <span
                     ref={elsMobileLogo}
                     className={styles.logoMobile}
-                    onClick={onMobileLogoClick}
+                    onClick={rearrangeMobileLetters}
                 >
                     <span className={styles.logoMobileLetter}>
                         <LogoLetterE />
@@ -173,7 +169,6 @@ export default function Index() {
                     engineer.&nbsp;
                 </p>
             </div>
-
             <footer ref={elFooter}>
                 <Footer />
             </footer>
