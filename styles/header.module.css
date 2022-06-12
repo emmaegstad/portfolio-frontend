@@ -41,17 +41,25 @@
 
 @media (min-width: 640px) {
     .gifToggle {
+        display: flex;
+        justify-content: center;
         width: 2.5em;
     }
 }
 
 .gifToggle.isVisible {
     display: flex;
-    width: 3.5em;
 }
 
 .gifClear {
     display: flex;
+    justify-content: center;
     width: 3.5em;
     margin-right: 0.6em;
+}
+
+@media (min-width: 640px) {
+    .gifClear {
+        width: 2.5em;
+    }
 }
