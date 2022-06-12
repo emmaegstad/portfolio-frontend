@@ -19,8 +19,7 @@ export default function Index() {
     const elMarquee = useRef('');
     const elFooter = useRef('');
     const elsMobileLogo = useRef('');
-    const { currentIndex, gifs } = useGlobal();
-    // const minWindowSize = useRef('');
+    const { currentIndex, activeGif, gifs } = useGlobal();
 
     // Create randomized letter position for mobile logo
     const setRandomLetterPosition = (el) => {
@@ -117,7 +116,7 @@ export default function Index() {
                 ref={elLogo}
                 className={cn({
                     [styles.indexLogo]: true,
-                    [styles.indexLogoGif]: currentIndex > -1,
+                    [styles.indexLogoGif]: activeGif,
                 })}
             >
                 <span className={styles.visuallyHidden}>Emma Egstad</span>
@@ -143,7 +142,7 @@ export default function Index() {
                     </span>
                 </span>
             </h1>
-            {currentIndex > -1 && (
+            {activeGif && (
                 <div className={styles.backgroundWrapper}>
                     <Image
                         src={gifs[currentIndex].url}
@@ -158,7 +157,7 @@ export default function Index() {
                 className={cn({
                     ['marquee3k']: true,
                     [styles.indexMarquee]: true,
-                    [styles.indexMarqueeGif]: currentIndex > -1,
+                    [styles.indexMarqueeGif]: activeGif,
                 })}
                 data-speed="1.5"
             >
