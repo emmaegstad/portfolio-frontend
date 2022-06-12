@@ -1,10 +1,10 @@
-import { client } from '../lib/projects';
-import Project from '../components/Project';
-import { v4 as uuid } from 'uuid';
 import styles from '../styles/work.module.css';
-import Footer from '../components/Footer';
 import { useEffect, useRef } from 'react';
 import { useGlobal } from '../context/GlobalContext';
+import { client } from '../lib/projects';
+import Project from '../components/Project';
+import Footer from '../components/Footer';
+import { v4 as uuid } from 'uuid';
 import gsap from 'gsap';
 
 export default function Work({ projects }) {
