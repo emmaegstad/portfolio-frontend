@@ -1,17 +1,11 @@
 .header {
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    display: flex;
     padding: 1em;
     z-index: 9999;
-}
-
-@media (min-width: 640px) {
-    .header {
-        justify-content: space-between;
-    }
 }
 
 .headerList {
@@ -24,15 +18,15 @@
     flex: 1;
 }
 
-.headerListItem a {
-    display: block;
-    width: 100%;
-}
-
 @media (min-width: 640px) {
     .headerListItem {
         flex: 0;
     }
+}
+
+.headerListItem a {
+    display: block;
+    width: 100%;
 }
 
 .headerListItem:last-child {
@@ -40,20 +34,24 @@
 }
 
 .gifToggle {
-    width: 100%;
-    margin-left: none;
-    width: 2em;
-    text-align: center;
-    padding-left: 0;
-    padding-right: 0;
-    color: black;
     display: none;
+    width: 3.5em;
+    color: black;
 }
 
-.gifToggle.is-visible {
-    display: block;
+@media (min-width: 640px) {
+    .gifToggle {
+        width: 2.5em;
+    }
 }
 
-.gifToggle:first-of-type {
-    margin-right: 0.5em;
+.gifToggle.isVisible {
+    display: flex;
+    width: 3.5em;
+}
+
+.gifClear {
+    display: flex;
+    width: 3.5em;
+    margin-right: 0.6em;
 }
