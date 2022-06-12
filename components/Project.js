@@ -1,10 +1,9 @@
-import React from 'react';
+import utilStyles from '../styles/utils.module.css';
+import styles from '../styles/project.module.css';
+import Link from 'next/link';
 import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
-import styles from '../styles/project.module.css';
-import utilStyles from '../styles/utils.module.css';
 import screenshot from '../public/assets/screenshot.jpg';
-import Link from 'next/link';
 
 export default function Project({ project }) {
     return (

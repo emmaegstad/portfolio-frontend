@@ -1,8 +1,8 @@
-import { useEffect, useRef } from 'react';
+import utilStyles from '../styles/utils.module.css';
+import styles from '../styles/about.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '../styles/about.module.css';
-import utilStyles from '../styles/utils.module.css';
+import { useEffect, useRef } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 import gsap from 'gsap';
 

@@ -1,23 +1,13 @@
-import { useState, useEffect, useRef } from 'react';
-import { useRouter } from 'next/router';
-import { useGlobal } from '../context/GlobalContext';
-import Header from './Header';
-import { debounce, resizeCallback } from '../utils/debounce';
-
 import styles from '../styles/layout.module.css';
+import { useEffect } from 'react';
+import { useGlobal } from '../context/GlobalContext';
+import { debounce, resizeCallback } from '../utils/debounce';
+import Header from './Header';
 
-export default function Layout({
-    children,
-    currentIndex,
-    setCurrentIndex,
-    gifs,
-}) {
-    const [activeFooter, setActiveFooter] = useState(true);
-    const [activeMystery, setActiveMystery] = useState(false);
+export default function Layout({ children }) {
     const { layoutHasMounted } = useGlobal();
 
-    const router = useRouter();
-
+    //set event listener for brower resize
     useEffect(() => {
         window.addEventListener('resize', debounce(resizeCallback, 300));
     }, []);
@@ -31,32 +21,10 @@ export default function Layout({
         layoutHasMounted.current = true;
     }, [layoutHasMounted]);
 
-    useEffect(() => {
-        if (router.pathname === '/about') {
-            setActiveFooter(false);
-        } else {
-            setActiveFooter(true);
-        }
-    }, [router.pathname]);
-
-    useEffect(() => {
-        if (router.pathname === '/') {
-            setActiveMystery(true);
-        } else {
-            setActiveMystery(false);
-        }
-    }, [router.pathname]);
-
     return (
         <div className={styles.layout}>
-            <Header
-                activeMystery={activeMystery}
-                currentIndex={currentIndex}
-                setCurrentIndex={setCurrentIndex}
-                gifs={gifs}
-            />
+            <Header />
             <main>{children}</main>
-            {/* {activeFooter && <Footer currentIndex={currentIndex} />} */}
         </div>
     );
 }

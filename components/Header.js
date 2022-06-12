@@ -3,17 +3,16 @@ import styles from '../styles/header.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
-import cn from 'classnames';
 import { useGlobal } from '../context/GlobalContext';
+import cn from 'classnames';
 import gsap from 'gsap';
-// import { v4 as uuid } from 'uuid';
 
-export default function Header({ activeMystery }) {
+export default function Header() {
+    const { currentIndex, setCurrentIndex, activeGif, setActiveGif, gifs } =
+        useGlobal();
     const router = useRouter();
     const elsLinks = useRef([]);
     const elButton = useRef();
-
-    const { currentIndex, setCurrentIndex, gifs } = useGlobal();
     const links = [
         {
             name: 'HOME',
@@ -32,7 +31,7 @@ export default function Header({ activeMystery }) {
     useEffect(() => {
         const els = [...elsLinks.current];
 
-        window.addEventListener('layoutMounted', (e) => {
+        window.addEventListener('layoutMounted', () => {
             els.push(elButton.current);
             animateLinks();
         });
@@ -56,6 +55,7 @@ export default function Header({ activeMystery }) {
     }, []);
 
     const handleClick = () => {
+        setActiveGif(true);
         if (currentIndex >= gifs.length - 1) {
             setCurrentIndex(0);
         } else {
@@ -64,6 +64,7 @@ export default function Header({ activeMystery }) {
     };
 
     const handleClear = () => {
+        setActiveGif(false);
         setCurrentIndex(-1);
     };
 
@@ -82,7 +83,7 @@ export default function Header({ activeMystery }) {
                             <a
                                 className={cn({
                                     [utilStyles.button]: true,
-                                    [utilStyles.buttonGif]: currentIndex > -1,
+                                    [utilStyles.buttonGif]: activeGif,
                                     [utilStyles.active]:
                                         router.pathname === link.href,
                                 })}
@@ -93,32 +94,30 @@ export default function Header({ activeMystery }) {
                     </li>
                 ))}
             </ul>
-            {currentIndex > -1 && (
+            {activeGif && (
                 <button
                     className={cn({
+                        [styles.gifClear]: true,
                         [utilStyles.button]: true,
-                        [utilStyles.buttonGif]: currentIndex > -1,
-                        [styles.last]: true,
+                        [utilStyles.buttonGif]: true,
                     })}
                     onClick={handleClear}
                 >
                     x
                 </button>
             )}
-            {/* {activeMystery && ( */}
             <button
                 ref={elButton}
                 className={cn({
-                    [styles['is-visible']]: router.pathname === '/',
                     [styles.gifToggle]: true,
                     [utilStyles.button]: true,
-                    [utilStyles.buttonGif]: currentIndex > -1,
+                    [utilStyles.buttonGif]: activeGif,
+                    [styles.isVisible]: router.pathname === '/',
                 })}
                 onClick={handleClick}
             >
                 🐱
             </button>
-            {/* )} */}
         </div>
     );
 }

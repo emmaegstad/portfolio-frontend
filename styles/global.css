@@ -13,6 +13,8 @@
     --font-size-medium: clamp(14px, 2vw, 24px);
     --font-size-large: clamp(24px, 4vw, 42px);
     --font-size-xl: clamp(40px, 7vw, 75px);
+
+    --min-window-size: 768px;
 }
 
 body {
