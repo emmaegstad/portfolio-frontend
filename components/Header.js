@@ -2,18 +2,17 @@ import utilStyles from '../styles/utils.module.css';
 import styles from '../styles/header.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import cn from 'classnames';
 import { useGlobal } from '../context/GlobalContext';
 import gsap from 'gsap';
 // import { v4 as uuid } from 'uuid';
 
-export default function Header({ activeMystery }) {
+export default function Header() {
+    const { currentIndex, setCurrentIndex, setActiveGif, gifs } = useGlobal();
     const router = useRouter();
     const elsLinks = useRef([]);
     const elButton = useRef();
-
-    const { currentIndex, setCurrentIndex, gifs } = useGlobal();
     const links = [
         {
             name: 'HOME',
@@ -56,6 +55,7 @@ export default function Header({ activeMystery }) {
     }, []);
 
     const handleClick = () => {
+        setActiveGif(true);
         if (currentIndex >= gifs.length - 1) {
             setCurrentIndex(0);
         } else {
@@ -64,6 +64,7 @@ export default function Header({ activeMystery }) {
     };
 
     const handleClear = () => {
+        setActiveGif(false);
         setCurrentIndex(-1);
     };
 
@@ -105,7 +106,6 @@ export default function Header({ activeMystery }) {
                     x
                 </button>
             )}
-            {/* {activeMystery && ( */}
             <button
                 ref={elButton}
                 className={cn({

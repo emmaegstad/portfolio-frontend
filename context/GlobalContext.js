@@ -5,13 +5,15 @@ export const GlobalContext = createContext();
 
 const GlobalProvider = ({ children }) => {
     const [currentIndex, setCurrentIndex] = useState(-1);
+    const [activeGif, setActiveGif] = useState(false);
     const [gifs, setGifs] = useState();
     const layoutHasMounted = useRef();
     const value = {
         currentIndex,
         setCurrentIndex,
+        activeGif,
+        setActiveGif,
         gifs,
-        setGifs,
         layoutHasMounted,
     };
 
