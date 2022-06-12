@@ -2,14 +2,14 @@ import utilStyles from '../styles/utils.module.css';
 import styles from '../styles/header.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useRef, useState } from 'react';
-import cn from 'classnames';
+import { useEffect, useRef } from 'react';
 import { useGlobal } from '../context/GlobalContext';
+import cn from 'classnames';
 import gsap from 'gsap';
-// import { v4 as uuid } from 'uuid';
 
 export default function Header() {
-    const { currentIndex, setCurrentIndex, setActiveGif, gifs } = useGlobal();
+    const { currentIndex, setCurrentIndex, activeGif, setActiveGif, gifs } =
+        useGlobal();
     const router = useRouter();
     const elsLinks = useRef([]);
     const elButton = useRef();
@@ -31,7 +31,7 @@ export default function Header() {
     useEffect(() => {
         const els = [...elsLinks.current];
 
-        window.addEventListener('layoutMounted', (e) => {
+        window.addEventListener('layoutMounted', () => {
             els.push(elButton.current);
             animateLinks();
         });
@@ -83,7 +83,7 @@ export default function Header() {
                             <a
                                 className={cn({
                                     [utilStyles.button]: true,
-                                    [utilStyles.buttonGif]: currentIndex > -1,
+                                    [utilStyles.buttonGif]: activeGif,
                                     [utilStyles.active]:
                                         router.pathname === link.href,
                                 })}
@@ -94,12 +94,12 @@ export default function Header() {
                     </li>
                 ))}
             </ul>
-            {currentIndex > -1 && (
+            {activeGif && (
                 <button
                     className={cn({
+                        [styles.gifClear]: true,
                         [utilStyles.button]: true,
-                        [utilStyles.buttonGif]: currentIndex > -1,
-                        [styles.last]: true,
+                        [utilStyles.buttonGif]: true,
                     })}
                     onClick={handleClear}
                 >
@@ -109,16 +109,15 @@ export default function Header() {
             <button
                 ref={elButton}
                 className={cn({
-                    [styles['is-visible']]: router.pathname === '/',
                     [styles.gifToggle]: true,
                     [utilStyles.button]: true,
-                    [utilStyles.buttonGif]: currentIndex > -1,
+                    [utilStyles.buttonGif]: activeGif,
+                    [styles.isVisible]: router.pathname === '/',
                 })}
                 onClick={handleClick}
             >
                 🐱
             </button>
-            {/* )} */}
         </div>
     );
 }
