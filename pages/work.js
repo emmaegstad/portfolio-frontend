@@ -1,36 +1,33 @@
 import styles from '../styles/work.module.css';
-import { useEffect, useRef } from 'react';
-import { useGlobal } from '../context/GlobalContext';
 import { client } from '../lib/projects';
 import Project from '../components/Project';
 import Footer from '../components/Footer';
 import { v4 as uuid } from 'uuid';
-import gsap from 'gsap';
+import { motion } from 'framer-motion';
 
 export default function Work({ projects }) {
-    const elContent = useRef();
-    const { layoutHasMounted } = useGlobal();
+    // Animation variants
+    const variants = {
+        hidden: { opacity: 0, x: 0, y: 0 },
+        enter: { opacity: 1, x: 0, y: 0 },
+        exit: { opacity: 0, x: 0, y: 0 },
+    };
 
-    useEffect(() => {
-        gsap.fromTo(
-            elContent.current,
-            {
-                opacity: 0,
-                y: 75,
-            },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                delay: layoutHasMounted.current ? 0 : 0.75,
-                ease: 'power4.out',
-            }
-        );
-    }, [layoutHasMounted]);
+    const onAnimationComplete = () => {
+        console.log('layout animation has completed');
+    };
 
     return (
-        <div className={styles.work}>
-            <main ref={elContent}>
+        <motion.div
+            className={styles.work}
+            initial="hidden"
+            animate="enter"
+            exit="exit"
+            variants={variants}
+            transition={{ duration: 0.6 }}
+            onAnimationComplete={onAnimationComplete}
+        >
+            <main>
                 {projects.length > 0 && (
                     <ul className={styles.workProjects}>
                         {projects.map((project) => (
@@ -41,7 +38,7 @@ export default function Work({ projects }) {
             </main>
 
             <Footer />
-        </div>
+        </motion.div>
     );
 }
 
