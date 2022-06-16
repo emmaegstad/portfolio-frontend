@@ -83,29 +83,31 @@ export default function Header() {
                     </li>
                 ))}
             </ul>
-            {activeGif && (
+            <section className={styles.gifButtons}>
                 <button
                     className={cn({
-                        [styles.gifClear]: true,
+                        [styles.gifToggle]: true,
                         [utilStyles.button]: true,
-                        [utilStyles.buttonGif]: true,
+                        [utilStyles.buttonGif]: activeGif,
+                        [styles.isVisible]: router.pathname === '/',
                     })}
-                    onClick={handleClear}
+                    onClick={handleClick}
                 >
-                    x
+                    🐱
                 </button>
-            )}
-            <button
-                className={cn({
-                    [styles.gifToggle]: true,
-                    [utilStyles.button]: true,
-                    [utilStyles.buttonGif]: activeGif,
-                    [styles.isVisible]: router.pathname === '/',
-                })}
-                onClick={handleClick}
-            >
-                🐱
-            </button>
+                {activeGif && (
+                    <button
+                        className={cn({
+                            [styles.gifClear]: true,
+                            [utilStyles.button]: true,
+                            [utilStyles.buttonGif]: true,
+                        })}
+                        onClick={handleClear}
+                    >
+                        x
+                    </button>
+                )}
+            </section>
         </motion.div>
     );
 }
