@@ -1,14 +1,14 @@
 import utilStyles from '../styles/utils.module.css';
 import styles from '../styles/header.module.css';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useGlobal } from '../context/GlobalContext';
 import cn from 'classnames';
 import { motion } from 'framer-motion';
 
 export default function Header() {
-    const [headerLoaded, setHeaderLoaded] = useState(false);
+    // const [headerLoaded, setHeaderLoaded] = useState(false);
     const { currentIndex, setCurrentIndex, activeGif, setActiveGif, gifs } =
         useGlobal();
     const router = useRouter();
@@ -73,6 +73,8 @@ export default function Header() {
                                     [utilStyles.buttonGif]: activeGif,
                                     [utilStyles.active]:
                                         router.pathname === link.href,
+                                    [utilStyles.workButton]:
+                                        router.pathname === '/work',
                                 })}
                             >
                                 {link.name}

@@ -2,7 +2,7 @@ import styles from '../styles/index.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Head from 'next/head';
 import Image from 'next/image';
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useRef } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 import cn from 'classnames';
 import gsap from 'gsap';
@@ -13,10 +13,12 @@ import Logo from '../public/assets/logo/logo-emma.js';
 import LogoLetterE from '../public/assets/logo/logo-letter-e.js';
 import LogoLetterM from '../public/assets/logo/logo-letter-m.js';
 import LogoLetterA from '../public/assets/logo/logo-letter-a.js';
+import Gradient from '../components/Gradient';
 
 export default function Index() {
     const marquee = Marquee3k;
     const { currentIndex, activeGif, gifs } = useGlobal();
+    const elsMobileLogo = useRef();
 
     // Create randomized letter position for mobile logo
     const setRandomLetterPosition = (el) => {
@@ -107,6 +109,7 @@ export default function Index() {
                     <Logo className={styles.logoDesktopImage} />
                 </span>
                 <span
+                    ref={elsMobileLogo}
                     className={styles.logoMobile}
                     onClick={rearrangeMobileLetters}
                 >
@@ -149,6 +152,7 @@ export default function Index() {
                     engineer.&nbsp;
                 </p>
             </div>
+            <Gradient />
             <footer>
                 <Footer />
             </footer>

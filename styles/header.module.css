@@ -41,7 +41,6 @@
 
 @media (min-width: 640px) {
     .gifToggle {
-        display: flex;
         justify-content: center;
         width: 2.5em;
     }
