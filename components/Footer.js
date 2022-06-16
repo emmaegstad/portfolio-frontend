@@ -21,6 +21,7 @@ export default function Footer() {
                 className={cn({
                     [styles.footerLinks]: true,
                     [styles.footerLinksGif]: activeGif,
+                    [styles.footerLinksWork]: router.pathname === '/work',
                 })}
             >
                 <li className={styles.footerLink}>

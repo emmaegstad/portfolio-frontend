@@ -36,6 +36,16 @@
     }
 }
 
+.footerLinksWork {
+    border-top: 1px solid black;
+}
+
+@media (min-width: 640px) {
+    .footerLinksWork {
+        border: none;
+    }
+}
+
 .footerLinksGif {
     border: none;
 }
@@ -73,6 +83,13 @@
 
 .footerTextWork {
     color: black;
+    border-top: 1px solid black;
+}
+
+@media (min-width: 640px) {
+    .footerTextWork {
+        border: none;
+    }
 }
 
 .footerTextGif {
