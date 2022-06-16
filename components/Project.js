@@ -38,17 +38,17 @@ export default function Project({ project }) {
                 </div>
                 <div className={styles.projectNavTags}>
                     <span
-                        className={`${styles.projectNavTag} ${utilStyles.button}`}
+                        className={`${styles.projectNavTag} ${utilStyles.button} ${utilStyles.workButton}`}
                     >
                         #React
                     </span>
                     <span
-                        className={`${styles.projectNavTag} ${utilStyles.button}`}
+                        className={`${styles.projectNavTag} ${utilStyles.button} ${utilStyles.workButton}`}
                     >
                         #Node.js
                     </span>
                     <span
-                        className={`${styles.projectNavTag} ${utilStyles.button}`}
+                        className={`${styles.projectNavTag} ${utilStyles.button} ${utilStyles.workButton}`}
                     >
                         #Express
                     </span>
