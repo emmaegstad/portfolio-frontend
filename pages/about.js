@@ -3,6 +3,7 @@ import styles from '../styles/about.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import Gradient from '../components/Gradient';
 
 export default function About() {
     // Animation variants
@@ -170,6 +171,7 @@ export default function About() {
                     <li>Miro</li>
                 </ul>
             </section>
+            <Gradient />
         </motion.div>
     );
 }

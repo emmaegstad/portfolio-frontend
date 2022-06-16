@@ -23,7 +23,7 @@
 
 .button:hover,
 .active {
-    color: #a42424;
+    color: var(--accent);
     background-color: #ffffffaf;
 }
 
