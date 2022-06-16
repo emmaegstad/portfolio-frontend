@@ -2,6 +2,8 @@ import React, { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import styles from '../styles/gradient.module.css';
 import { fragmentShader, vertexShader } from '../utils/shaders';
+import { useGlobal } from '../context/GlobalContext';
+import cn from 'classnames';
 
 let frameCount = 0;
 const animationSpeedMultiplier = 0.02;
@@ -37,8 +39,15 @@ function GradientPlane(props) {
 }
 
 export default function Gradient() {
+    const { activeGif } = useGlobal();
+
     return (
-        <div className={styles.gradient}>
+        <div
+            className={cn({
+                [styles.gradient]: true,
+                [styles.gradientGif]: activeGif,
+            })}
+        >
             <Canvas>
                 <GradientPlane position={[0, 0, 0]} />
             </Canvas>
