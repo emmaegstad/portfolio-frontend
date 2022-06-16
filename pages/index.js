@@ -148,8 +148,8 @@ export default function Index() {
                 <p
                     className={`${utilStyles['text-lg']} ${utilStyles['text-bold']}`}
                 >
-                    Hello, my name is Emma Egstad. I am a full-stack software
-                    engineer.&nbsp;
+                    Hello! My name is Emma Egstad, and I am a full-stack
+                    software engineer in Tulsa, OK.&nbsp;
                 </p>
             </div>
             <Gradient />

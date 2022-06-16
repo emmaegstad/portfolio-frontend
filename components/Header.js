@@ -1,7 +1,6 @@
 import utilStyles from '../styles/utils.module.css';
 import styles from '../styles/header.module.css';
 import Link from 'next/link';
-import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useGlobal } from '../context/GlobalContext';
 import cn from 'classnames';

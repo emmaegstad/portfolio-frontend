@@ -79,3 +79,9 @@
     color: white;
     border-top: 1px solid white;
 }
+
+@media (min-width: 640px) {
+    .footerTextGif {
+        border: none;
+    }
+}

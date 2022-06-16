@@ -73,7 +73,7 @@ export default function Footer() {
                     [styles.footerTextGif]: activeGif,
                 })}
             >
-                <span>thanks for scrolling!</span>
+                <span>thanks for stopping by!</span>
                 <span>(c) copyright 2022</span>
             </section>
         </div>
