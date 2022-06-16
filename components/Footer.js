@@ -2,21 +2,25 @@ import styles from '../styles/footer.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import cn from 'classnames';
+import { useRouter } from 'next/router';
 import { useGlobal } from '../context/GlobalContext';
 
 export default function Footer() {
     const { activeGif } = useGlobal();
+    const router = useRouter();
 
     return (
         <div
             className={cn({
                 [styles.footer]: true,
                 [styles.footerGif]: activeGif,
+                [styles.footerWork]: router.pathname === '/work',
             })}
         >
             <ul
                 className={cn({
                     [styles.footerLinks]: true,
+                    [styles.footerLinksGif]: activeGif,
                 })}
             >
                 <li className={styles.footerLink}>
@@ -25,6 +29,8 @@ export default function Footer() {
                             className={cn({
                                 [utilStyles.button]: true,
                                 [utilStyles.buttonGif]: activeGif,
+                                [utilStyles.workButton]:
+                                    router.pathname === '/work',
                             })}
                         >
                             github
@@ -37,6 +43,8 @@ export default function Footer() {
                             className={cn({
                                 [utilStyles.button]: true,
                                 [utilStyles.buttonGif]: activeGif,
+                                [utilStyles.workButton]:
+                                    router.pathname === '/work',
                             })}
                         >
                             linkedin
@@ -49,6 +57,8 @@ export default function Footer() {
                             className={cn({
                                 [utilStyles.button]: true,
                                 [utilStyles.buttonGif]: activeGif,
+                                [utilStyles.workButton]:
+                                    router.pathname === '/work',
                             })}
                         >
                             email
@@ -59,6 +69,7 @@ export default function Footer() {
             <section
                 className={cn({
                     [styles.footerText]: true,
+                    [styles.footerTextWork]: router.pathname === '/work',
                     [styles.footerTextGif]: activeGif,
                 })}
             >
