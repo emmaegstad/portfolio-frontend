@@ -88,8 +88,10 @@ export default function About() {
                         layout="responsive"
                         alt="emma"
                     />
-                    <figcaption>
-                        <p className={utilStyles['text-sm']}>Hello lasdlfkj</p>
+                    <figcaption className={styles.caption}>
+                        <p className={utilStyles['text-sm']}>
+                            Hello, I'm Emma.
+                        </p>
                     </figcaption>
                 </figure>
                 <figure className={styles.aboutImageWrapper}>
@@ -101,6 +103,11 @@ export default function About() {
                         layout="responsive"
                         alt="cats"
                     />
+                    <figcaption className={styles.caption}>
+                        <p className={utilStyles['text-sm']}>
+                            Hello, I'm Emma.
+                        </p>
+                    </figcaption>
                 </figure>
                 <div className={styles.aboutImageWrapper}>
                     <Image
@@ -111,6 +118,11 @@ export default function About() {
                         layout="responsive"
                         alt="jordanjj"
                     />
+                    <figcaption className={styles.caption}>
+                        <p className={utilStyles['text-sm']}>
+                            Hello, I'm Emma.
+                        </p>
+                    </figcaption>
                 </div>
                 <div className={styles.aboutImageWrapper}>
                     <Image
@@ -121,6 +133,11 @@ export default function About() {
                         layout="responsive"
                         alt="michelle"
                     />
+                    <figcaption className={styles.caption}>
+                        <p className={utilStyles['text-sm']}>
+                            Hello, I'm Emma.
+                        </p>
+                    </figcaption>
                 </div>
                 <div className={styles.aboutImageWrapper}>
                     <Image
@@ -131,6 +148,11 @@ export default function About() {
                         layout="responsive"
                         alt="minnie"
                     />
+                    <figcaption className={styles.caption}>
+                        <p className={utilStyles['text-sm']}>
+                            Hello, I'm Emma.
+                        </p>
+                    </figcaption>
                 </div>
             </section>
             <section className={styles.aboutSkills}>
