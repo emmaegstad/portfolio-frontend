@@ -18,20 +18,24 @@
     }
 }
 
-.workCTA {
+.workCta {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1em;
+    gap: 0.5em;
     font-family: var(--font-primary-bold);
     font-size: var(--font-size-large);
     text-align: center;
-    padding: 2em 1em 4em 1em;
+    padding: 0.5em 2em 2.5em 2em;
 }
 
 @media (min-width: 768px) {
-    .workCTA {
+    .workCta {
         padding: 3em;
         gap: 0.5em;
     }
+}
+
+.workCtaCaption {
+    letter-spacing: -0.07em;
 }

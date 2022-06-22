@@ -34,8 +34,8 @@ export default function Work({ projects }) {
                     </ul>
                 )}
             </section>
-            <section className={styles.workCTA}>
-                <span>
+            <section className={styles.workCta}>
+                <span className={styles.workCtaCaption}>
                     Thanks for looking! I am currently seeking new job
                     opportunities.
                 </span>
