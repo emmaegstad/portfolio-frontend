@@ -98,6 +98,8 @@
 
 @media (min-width: 640px) {
     .footerTextGif {
+        display: flex;
+        color: white;
         border: none;
     }
 }
