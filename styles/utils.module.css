@@ -21,12 +21,8 @@
     }
 }
 
-.button:hover {
-    color: var(--accent);
-    background-color: #ffffffaf;
-}
-
-.active {
+.button:hover,
+.button.active {
     color: var(--accent);
     background-color: #ffffffaf;
 }

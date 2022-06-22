@@ -14,7 +14,7 @@ export default function Project({ project }) {
                 <div className={styles.projectNavLinks}>
                     <Link href={project?.site}>
                         <a
-                            className={`${styles.projectNavLink} ${utilStyles.button}`}
+                            className={`${utilStyles.button} ${styles.projectNavLink}`}
                         >
                             view site
                         </a>
