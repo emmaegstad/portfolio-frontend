@@ -2,17 +2,15 @@ import utilStyles from '../styles/utils.module.css';
 import styles from '../styles/header.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useRef } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 import cn from 'classnames';
-import gsap from 'gsap';
+import { motion } from 'framer-motion';
 
 export default function Header() {
+    // const [headerLoaded, setHeaderLoaded] = useState(false);
     const { currentIndex, setCurrentIndex, activeGif, setActiveGif, gifs } =
         useGlobal();
     const router = useRouter();
-    const elsLinks = useRef([]);
-    const elButton = useRef();
     const links = [
         {
             name: 'HOME',
@@ -28,31 +26,18 @@ export default function Header() {
         },
     ];
 
-    useEffect(() => {
-        const els = [...elsLinks.current];
+    // Animation variants
+    const variants = {
+        notHidden: { opacity: 1, x: 0, y: 0 },
+        hidden: { opacity: 1, x: -100, y: -100 },
+        enter: { opacity: 1, x: 0, y: 0 },
+        exit: { opacity: 0, x: 0, y: 0 },
+    };
 
-        window.addEventListener('layoutMounted', () => {
-            els.push(elButton.current);
-            animateLinks();
-        });
-
-        const animateLinks = () => {
-            gsap.fromTo(
-                els,
-                {
-                    opacity: 0,
-                    y: '-100%',
-                },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1,
-                    stagger: 0.25,
-                    ease: 'power4.out',
-                }
-            );
-        };
-    }, []);
+    const onComplete = () => {
+        setHeaderLoaded(true);
+        console.log('header animation complete');
+    };
 
     const handleClick = () => {
         setActiveGif(true);
@@ -69,16 +54,17 @@ export default function Header() {
     };
 
     return (
-        <div className={styles.header}>
+        <motion.div
+            className={styles.header}
+            initial="enter"
+            // animate="enter"
+            variants={variants}
+            transition={{ staggerChildren: 0.5 }}
+            onAnimationComplete={onComplete}
+        >
             <ul className={styles.headerList}>
                 {links.map((link, index) => (
-                    <li
-                        ref={(element) => {
-                            elsLinks.current[index] = element;
-                        }}
-                        className={styles.headerListItem}
-                        key={index}
-                    >
+                    <li className={styles.headerListItem} key={index}>
                         <Link href={link.href}>
                             <a
                                 className={cn({
@@ -86,6 +72,8 @@ export default function Header() {
                                     [utilStyles.buttonGif]: activeGif,
                                     [utilStyles.active]:
                                         router.pathname === link.href,
+                                    [utilStyles.workButton]:
+                                        router.pathname === '/work',
                                 })}
                             >
                                 {link.name}
@@ -94,30 +82,31 @@ export default function Header() {
                     </li>
                 ))}
             </ul>
-            {activeGif && (
+            <section className={styles.gifButtons}>
                 <button
                     className={cn({
-                        [styles.gifClear]: true,
+                        [styles.gifToggle]: true,
                         [utilStyles.button]: true,
-                        [utilStyles.buttonGif]: true,
+                        [utilStyles.buttonGif]: activeGif,
+                        [styles.isVisible]: router.pathname === '/',
                     })}
-                    onClick={handleClear}
+                    onClick={handleClick}
                 >
-                    x
+                    🐱
                 </button>
-            )}
-            <button
-                ref={elButton}
-                className={cn({
-                    [styles.gifToggle]: true,
-                    [utilStyles.button]: true,
-                    [utilStyles.buttonGif]: activeGif,
-                    [styles.isVisible]: router.pathname === '/',
-                })}
-                onClick={handleClick}
-            >
-                🐱
-            </button>
-        </div>
+                {activeGif && (
+                    <button
+                        className={cn({
+                            [styles.gifClear]: true,
+                            [utilStyles.button]: true,
+                            [utilStyles.buttonGif]: true,
+                        })}
+                        onClick={handleClear}
+                    >
+                        x
+                    </button>
+                )}
+            </section>
+        </motion.div>
     );
 }

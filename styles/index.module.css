@@ -93,4 +93,5 @@
 .logoMobileLetter svg {
     height: 100%;
     width: auto;
+    cursor: pointer;
 }

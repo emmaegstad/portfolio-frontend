@@ -8,7 +8,7 @@
     text-transform: uppercase;
     background-color: #ffffff50;
     color: #ffffff70;
-    font-family: var(--font-primary);
+    font-family: var(--font-primary-bold);
     font-size: var(--font-size-medium);
     padding: 1em 1.3em;
     line-height: 1;
@@ -23,13 +23,23 @@
 
 .button:hover,
 .active {
-    color: #a42424;
+    color: var(--accent);
     background-color: #ffffffaf;
 }
 
 .buttonGif {
     background-color: white;
     color: black;
+}
+
+.workButton {
+    background-color: rgba(0, 0, 0, 0.109);
+    color: rgba(0, 0, 0, 0.779);
+}
+
+.workButton:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgba(230, 225, 225, 0.951);
 }
 
 .text-bold {

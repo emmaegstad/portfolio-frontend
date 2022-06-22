@@ -2,24 +2,23 @@ import styles from '../styles/index.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Head from 'next/head';
 import Image from 'next/image';
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useCallback, useRef } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 import cn from 'classnames';
 import gsap from 'gsap';
 import Marquee3k from 'marquee3000';
+import { motion } from 'framer-motion';
 import Footer from '../components/Footer';
 import Logo from '../public/assets/logo/logo-emma.js';
 import LogoLetterE from '../public/assets/logo/logo-letter-e.js';
 import LogoLetterM from '../public/assets/logo/logo-letter-m.js';
 import LogoLetterA from '../public/assets/logo/logo-letter-a.js';
+import Gradient from '../components/Gradient';
 
 export default function Index() {
     const marquee = Marquee3k;
-    const elLogo = useRef('');
-    const elMarquee = useRef('');
-    const elFooter = useRef('');
-    const elsMobileLogo = useRef('');
     const { currentIndex, activeGif, gifs } = useGlobal();
+    const elsMobileLogo = useRef();
 
     // Create randomized letter position for mobile logo
     const setRandomLetterPosition = (el) => {
@@ -28,6 +27,13 @@ export default function Index() {
         const container = window.innerWidth - width;
 
         return Math.random() * container;
+    };
+
+    // Animation variants
+    const variants = {
+        hidden: { opacity: 0, x: 0, y: 0 },
+        enter: { opacity: 1, x: 0, y: 0 },
+        exit: { opacity: 0, x: 0, y: 0 },
     };
 
     // Animate mobile logo letters into random position
@@ -75,35 +81,15 @@ export default function Index() {
         };
     }, [rearrangeMobileLetters]);
 
-    useEffect(() => {
-        // Logo animation controls
-        const animateLogo = () => {
-            gsap.set(elLogo.current, { opacity: 0 });
-
-            gsap.fromTo(
-                [elLogo.current, elMarquee.current, elFooter.current],
-                {
-                    opacity: 0,
-                    y: 50,
-                },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1,
-                    stagger: 0.2,
-                    ease: 'power4.out',
-                    onComplete: () => {
-                        dispatchEvent(new CustomEvent('animateFooter'));
-                    },
-                }
-            );
-        };
-
-        animateLogo();
-    }, []);
-
     return (
-        <div className={styles.index}>
+        <motion.div
+            className={styles.index}
+            initial="hidden"
+            animate="enter"
+            exit="exit"
+            variants={variants}
+            transition={{ duration: 0.6 }}
+        >
             <Head>
                 <title>Portfolio</title>
                 <meta
@@ -113,7 +99,6 @@ export default function Index() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <h1
-                ref={elLogo}
                 className={cn({
                     [styles.indexLogo]: true,
                     [styles.indexLogoGif]: activeGif,
@@ -153,7 +138,6 @@ export default function Index() {
                 </div>
             )}
             <div
-                ref={elMarquee}
                 className={cn({
                     ['marquee3k']: true,
                     [styles.indexMarquee]: true,
@@ -164,13 +148,14 @@ export default function Index() {
                 <p
                     className={`${utilStyles['text-lg']} ${utilStyles['text-bold']}`}
                 >
-                    Hello, my name is Emma Egstad. I am a full-stack software
-                    engineer.&nbsp;
+                    Hello! My name is Emma Egstad, and I am a full-stack
+                    software engineer in Tulsa, OK.&nbsp;
                 </p>
             </div>
-            <footer ref={elFooter}>
+            <Gradient />
+            <footer>
                 <Footer />
             </footer>
-        </div>
+        </motion.div>
     );
 }

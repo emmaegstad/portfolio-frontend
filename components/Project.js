@@ -13,11 +13,16 @@ export default function Project({ project }) {
                 <PortableText value={project?.description} />
             </section>
             <div className={styles.projectImageWrapper}>
-                <Image
-                    className={styles.projectImage}
-                    src={screenshot}
-                    alt="screenshot"
-                />
+                <div className={styles.projectLoom}>
+                    <iframe
+                        className={styles.projectLoomIframe}
+                        src="https://www.loom.com/embed/d52748624ee845d1b267be36f3eaff58"
+                        frameBorder="0"
+                        webkitallowfullscreen="true"
+                        mozallowfullscreen="true"
+                        allowFullScreen
+                    ></iframe>
+                </div>
             </div>
             <section className={styles.projectNav}>
                 <div className={styles.projectNavLinks}>
@@ -38,17 +43,17 @@ export default function Project({ project }) {
                 </div>
                 <div className={styles.projectNavTags}>
                     <span
-                        className={`${styles.projectNavTag} ${utilStyles.button}`}
+                        className={`${styles.projectNavTag} ${utilStyles.button} ${utilStyles.workButton}`}
                     >
                         #React
                     </span>
                     <span
-                        className={`${styles.projectNavTag} ${utilStyles.button}`}
+                        className={`${styles.projectNavTag} ${utilStyles.button} ${utilStyles.workButton}`}
                     >
                         #Node.js
                     </span>
                     <span
-                        className={`${styles.projectNavTag} ${utilStyles.button}`}
+                        className={`${styles.projectNavTag} ${utilStyles.button} ${utilStyles.workButton}`}
                     >
                         #Express
                     </span>

@@ -2,33 +2,31 @@ import utilStyles from '../styles/utils.module.css';
 import styles from '../styles/about.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
-import { useGlobal } from '../context/GlobalContext';
-import gsap from 'gsap';
+import { motion } from 'framer-motion';
+import Gradient from '../components/Gradient';
 
 export default function About() {
-    const elContent = useRef();
-    const { layoutHasMounted } = useGlobal();
+    // Animation variants
+    const variants = {
+        hidden: { opacity: 0, x: 0, y: 0 },
+        enter: { opacity: 1, x: 0, y: 0 },
+        exit: { opacity: 0, x: 0, y: 0 },
+    };
 
-    useEffect(() => {
-        gsap.fromTo(
-            elContent.current,
-            {
-                opacity: 0,
-                y: 75,
-            },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                delay: layoutHasMounted ? 0 : 0.5,
-                ease: 'power4.out',
-            }
-        );
-    }, [layoutHasMounted]);
+    const onAnimationComplete = () => {
+        console.log('layout animation has completed');
+    };
 
     return (
-        <div ref={elContent} className={styles.about}>
+        <motion.div
+            className={styles.about}
+            initial="hidden"
+            animate="enter"
+            exit="exit"
+            variants={variants}
+            transition={{ duration: 0.6 }}
+            onAnimationComplete={onAnimationComplete}
+        >
             <section className={styles.aboutBio}>
                 <p className={styles.aboutBioPrimary}>
                     Hi, I am Emma Egstad. Full-stack web developer based in
@@ -90,8 +88,10 @@ export default function About() {
                         layout="responsive"
                         alt="emma"
                     />
-                    <figcaption>
-                        <p className={utilStyles['text-sm']}>Hello lasdlfkj</p>
+                    <figcaption className={styles.caption}>
+                        <p className={utilStyles['text-sm']}>
+                            Hello, I'm Emma.
+                        </p>
                     </figcaption>
                 </figure>
                 <figure className={styles.aboutImageWrapper}>
@@ -103,6 +103,11 @@ export default function About() {
                         layout="responsive"
                         alt="cats"
                     />
+                    <figcaption className={styles.caption}>
+                        <p className={utilStyles['text-sm']}>
+                            Hello, I'm Emma.
+                        </p>
+                    </figcaption>
                 </figure>
                 <div className={styles.aboutImageWrapper}>
                     <Image
@@ -113,6 +118,11 @@ export default function About() {
                         layout="responsive"
                         alt="jordanjj"
                     />
+                    <figcaption className={styles.caption}>
+                        <p className={utilStyles['text-sm']}>
+                            Hello, I'm Emma.
+                        </p>
+                    </figcaption>
                 </div>
                 <div className={styles.aboutImageWrapper}>
                     <Image
@@ -123,6 +133,11 @@ export default function About() {
                         layout="responsive"
                         alt="michelle"
                     />
+                    <figcaption className={styles.caption}>
+                        <p className={utilStyles['text-sm']}>
+                            Hello, I'm Emma.
+                        </p>
+                    </figcaption>
                 </div>
                 <div className={styles.aboutImageWrapper}>
                     <Image
@@ -133,6 +148,11 @@ export default function About() {
                         layout="responsive"
                         alt="minnie"
                     />
+                    <figcaption className={styles.caption}>
+                        <p className={utilStyles['text-sm']}>
+                            Hello, I'm Emma.
+                        </p>
+                    </figcaption>
                 </div>
             </section>
             <section className={styles.aboutSkills}>
@@ -173,6 +193,7 @@ export default function About() {
                     <li>Miro</li>
                 </ul>
             </section>
-        </div>
+            <Gradient />
+        </motion.div>
     );
 }

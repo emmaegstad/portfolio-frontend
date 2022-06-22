@@ -11,6 +11,10 @@
         border-top: 1px solid #ffffff70;
     }
 
+    .footerWork {
+        border-top: 1px solid black;
+    }
+
     .footerGif {
         border-top: 1px solid white;
     }
@@ -30,6 +34,20 @@
         height: auto;
         padding: 0;
     }
+}
+
+.footerLinksWork {
+    border-top: 1px solid black;
+}
+
+@media (min-width: 640px) {
+    .footerLinksWork {
+        border: none;
+    }
+}
+
+.footerLinksGif {
+    border: none;
 }
 
 .footerLink {
@@ -63,6 +81,24 @@
     }
 }
 
+.footerTextWork {
+    color: black;
+    border-top: 1px solid black;
+}
+
+@media (min-width: 640px) {
+    .footerTextWork {
+        border: none;
+    }
+}
+
 .footerTextGif {
     color: white;
+    border-top: 1px solid white;
+}
+
+@media (min-width: 640px) {
+    .footerTextGif {
+        border: none;
+    }
 }
