@@ -30,14 +30,14 @@
 }
 
 .projectImageWrapper {
-    padding: 1em;
+    width: 100%;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .projectImageWrapper {
         padding: 0 6em;
     }
-}
+} */
 
 .projectImage {
     border-radius: 2vw;
@@ -105,4 +105,20 @@
     text-transform: lowercase;
     font-family: var(--font-mono);
     font-size: var(--font-size-small);
+}
+
+.projectLoom {
+    position: relative;
+    height: auto;
+    padding-bottom: 56.25% !important;
+}
+
+.projectLoomIframe {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: clamp(1em, 1.5vw, 2em);
 }
