@@ -21,7 +21,11 @@
     }
 }
 
-.button:hover,
+.button:hover {
+    color: var(--accent);
+    background-color: #ffffffaf;
+}
+
 .active {
     color: var(--accent);
     background-color: #ffffffaf;
@@ -38,7 +42,8 @@
     color: rgba(0, 0, 0, 0.779);
 }
 
-.workButton:hover {
+.workButton:hover,
+.workButton.active {
     background-color: rgb(0, 0, 0);
     color: rgba(230, 225, 225, 0.951);
 }
