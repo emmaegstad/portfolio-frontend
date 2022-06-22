@@ -4,6 +4,10 @@
     width: 100vw;
 }
 
+.footerGif {
+    border: none;
+}
+
 @media (min-width: 640px) {
     .footer {
         flex-direction: row;
@@ -13,10 +17,6 @@
 
     .footerWork {
         border-top: 1px solid black;
-    }
-
-    .footerGif {
-        border: none;
     }
 }
 
@@ -93,8 +93,7 @@
 }
 
 .footerTextGif {
-    color: white;
-    border-top: 1px solid white;
+    display: none;
 }
 
 @media (min-width: 640px) {
