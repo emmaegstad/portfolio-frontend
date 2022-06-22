@@ -1,3 +1,4 @@
+import utilStyles from '../styles/utils.module.css';
 import styles from '../styles/work.module.css';
 import { client } from '../lib/projects';
 import Project from '../components/Project';
@@ -27,7 +28,7 @@ export default function Work({ projects }) {
             transition={{ duration: 0.6 }}
             onAnimationComplete={onAnimationComplete}
         >
-            <main>
+            <section className={styles.workProjects}>
                 {projects.length > 0 && (
                     <ul className={styles.workProjects}>
                         {projects.map((project) => (
@@ -35,7 +36,18 @@ export default function Work({ projects }) {
                         ))}
                     </ul>
                 )}
-            </main>
+            </section>
+            <section className={styles.workCTA}>
+                <span>
+                    Thanks for looking! I am currently looking for new
+                    opportunities.
+                </span>
+                <button
+                    className={`${utilStyles.button} ${utilStyles.workButton}`}
+                >
+                    Learn More
+                </button>
+            </section>
 
             <Footer />
         </motion.div>
