@@ -27,8 +27,9 @@
     background-color: #ffffffaf;
 }
 
-.buttonGif {
-    background-color: white;
+.buttonGif,
+.buttonGif:focus {
+    background-color: white !important;
     color: black;
 }
 
