@@ -16,10 +16,6 @@
     margin-top: 75px;
 }
 
-.indexLogoGif {
-    display: none;
-}
-
 .indexMarquee {
     display: flex;
     align-items: center;
@@ -28,12 +24,6 @@
     color: #ffffff70;
     border-top: 1px solid #ffffff70;
     min-height: 72px;
-}
-
-.indexMarqueeGif {
-    color: black;
-    background-color: white;
-    border-top: none;
 }
 
 .backgroundWrapper {

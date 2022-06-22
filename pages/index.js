@@ -119,7 +119,7 @@ export default function Index() {
             <h1
                 className={cn({
                     [styles.indexLogo]: true,
-                    [styles.indexLogoGif]: activeGif,
+                    [styles.visuallyHidden]: activeGif,
                 })}
             >
                 <span className={styles.visuallyHidden}>Emma Egstad</span>
@@ -159,7 +159,7 @@ export default function Index() {
                 className={cn({
                     ['marquee3k']: true,
                     [styles.indexMarquee]: true,
-                    [styles.indexMarqueeGif]: activeGif,
+                    [styles.visuallyHidden]: activeGif,
                 })}
                 data-speed="1.5"
             >
