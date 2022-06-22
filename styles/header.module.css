@@ -51,11 +51,6 @@
     color: black;
 }
 
-/* .gifToggle:active,
-.gifToggle:focus {
-    background: #ffffff !important;
-} */
-
 @media (min-width: 640px) {
     .gifToggle {
         justify-content: center;

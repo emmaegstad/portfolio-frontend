@@ -9,6 +9,29 @@
     flex-direction: column;
     align-items: center;
     gap: 2em;
-    margin: 2em 0 2em 0;
-    padding-top: clamp(40px, 4vw, 160px);
+    padding-top: 3.5em;
+}
+
+@media (min-width: 768px) {
+    .workProjects {
+        padding-top: 2em;
+    }
+}
+
+.workCTA {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    font-family: var(--font-primary-bold);
+    font-size: var(--font-size-large);
+    text-align: center;
+    padding: 2em 1em 4em 1em;
+}
+
+@media (min-width: 768px) {
+    .workCTA {
+        padding: 3em;
+        gap: 0.5em;
+    }
 }

@@ -4,10 +4,6 @@
     width: 100vw;
 }
 
-.footerGif {
-    border: none;
-}
-
 @media (min-width: 640px) {
     .footer {
         flex-direction: row;
@@ -16,7 +12,11 @@
     }
 
     .footerWork {
-        border-top: 1px solid black;
+        border-top: 1px solid rgba(0, 0, 0, 0.119);
+    }
+
+    .footerGif {
+        border-top: none;
     }
 }
 
@@ -37,7 +37,7 @@
 }
 
 .footerLinksWork {
-    border-top: 1px solid black;
+    border-top: 1px solid rgba(0, 0, 0, 0.119);
 }
 
 @media (min-width: 640px) {
@@ -83,7 +83,7 @@
 
 .footerTextWork {
     color: black;
-    border-top: 1px solid black;
+    border-top: 1px solid rgba(0, 0, 0, 0.119);
 }
 
 @media (min-width: 640px) {
@@ -93,13 +93,12 @@
 }
 
 .footerTextGif {
-    display: none;
+    color: white;
+    border-top: 1px solid white;
 }
 
 @media (min-width: 640px) {
     .footerTextGif {
-        display: flex;
-        color: white;
         border: none;
     }
 }
