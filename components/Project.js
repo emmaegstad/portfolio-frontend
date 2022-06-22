@@ -31,7 +31,7 @@ export default function Project({ project }) {
             <section className={styles.projectLoom}>
                 <iframe
                     className={styles.projectLoomIframe}
-                    src="https://www.loom.com/embed/d52748624ee845d1b267be36f3eaff58"
+                    src={project?.loom}
                     frameBorder="0"
                     webkitallowfullscreen="true"
                     mozallowfullscreen="true"
