@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { useEffect, useCallback, useRef } from 'react';
 import { useGlobal } from '../context/GlobalContext';
+import { useRouter } from 'next/router';
 import cn from 'classnames';
 import gsap from 'gsap';
 import Marquee3k from 'marquee3000';
@@ -16,8 +17,9 @@ import LogoLetterA from '../public/assets/logo/logo-letter-a.js';
 import Gradient from '../components/Gradient';
 
 export default function Index() {
+    const router = useRouter();
     const marquee = Marquee3k;
-    const { currentIndex, activeGif, gifs } = useGlobal();
+    const { currentIndex, activeGif, setActiveGif, gifs } = useGlobal();
     const elsMobileLogo = useRef();
 
     // Create randomized letter position for mobile logo
@@ -80,6 +82,22 @@ export default function Index() {
             window.removeEventListener('windowResized', logoHandler);
         };
     }, [rearrangeMobileLetters]);
+
+    useEffect(() => {
+        const handleRouteChange = () => {
+            console.log('left home page');
+            setActiveGif(false);
+        };
+
+        // remove active GIF state when exiting homepage
+        router.events.on('routeChangeStart', handleRouteChange);
+
+        //clean up listener
+        return () => {
+            console.log('cleaning up');
+            router.events.off('routeChangeStart', handleRouteChange);
+        };
+    }, [router.events, setActiveGif]);
 
     return (
         <motion.div
