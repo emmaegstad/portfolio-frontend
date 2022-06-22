@@ -85,9 +85,9 @@ export default function Header() {
             <section className={styles.gifButtons}>
                 <button
                     className={cn({
-                        [styles.gifToggle]: true,
                         [utilStyles.button]: true,
                         [utilStyles.buttonGif]: activeGif,
+                        [styles.gifToggle]: true,
                         [styles.isVisible]: router.pathname === '/',
                     })}
                     onClick={handleClick}
