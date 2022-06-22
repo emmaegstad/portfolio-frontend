@@ -15,6 +15,7 @@ import LogoLetterE from '../public/assets/logo/logo-letter-e.js';
 import LogoLetterM from '../public/assets/logo/logo-letter-m.js';
 import LogoLetterA from '../public/assets/logo/logo-letter-a.js';
 import Gradient from '../components/Gradient';
+import { debounce, resizeCallback } from '../utils/debounce';
 
 export default function Index() {
     const router = useRouter();
@@ -57,6 +58,10 @@ export default function Index() {
             .getPropertyValue('--min-window-size')
             .slice(0, -2);
     };
+
+    useEffect(() => {
+        window.addEventListener('resize', debounce(resizeCallback, 300));
+    }, []);
 
     useEffect(() => {
         // Initialize marquee
