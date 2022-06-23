@@ -90,7 +90,6 @@ export default function Index() {
 
     useEffect(() => {
         const handleRouteChange = () => {
-            console.log('left home page');
             setActiveGif(false);
         };
 
