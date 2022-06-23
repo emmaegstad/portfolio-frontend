@@ -1,5 +1,5 @@
 .about {
-    color: rgba(255, 255, 255, 0.68);
+    color: white;
     padding-top: clamp(120px, 20vw, 160px);
 }
 
