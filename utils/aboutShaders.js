@@ -10,9 +10,9 @@ export const fragmentShader = glsl`
     void main() {
         float vmin = min(resolution.y, resolution.x);
         vec2 p = vUv * 1. - .25; // (gl_FragCoord.xy - .5 * resolution) / vmin;
-        float r = .5 + .25 * (sin(5. * p.x + time));
-        float g = .5 + .125 * (sin(5. * p.y) + sin(time + 2. * p.x));  
-        float b = .5 + .25 * (sin(.2 + p.x * p.y * 17.) + sin(time * .4  + 4. * p.y));
+        float r = .4 + .25 * (sin(5. * p.x + time));
+        float g = .4 + .125 * (sin(5. * p.y) + sin(time + 2. * p.x));  
+        float b = .4 + .25 * (sin(.2 + p.x * p.y * 17.) + sin(time * .4  + 4. * p.y));
         gl_FragColor = vec4(r, g, b, 1.);
     }
 `;

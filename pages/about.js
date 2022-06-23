@@ -3,7 +3,7 @@ import styles from '../styles/about.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import Gradient from '../components/Gradient';
+import AboutGradient from '../components/AboutGradient';
 
 export default function About() {
     // Animation variants
@@ -93,7 +93,7 @@ export default function About() {
                     />
                     <figcaption className={styles.caption}>
                         <p className={utilStyles['text-sm']}>
-                            Hello, I'm Emma.
+                            Hello, I am Emma.
                         </p>
                     </figcaption>
                 </figure>
@@ -108,7 +108,7 @@ export default function About() {
                     />
                     <figcaption className={styles.caption}>
                         <p className={utilStyles['text-sm']}>
-                            Hello, I'm Emma.
+                            Hello, I am Emma.
                         </p>
                     </figcaption>
                 </figure>
@@ -123,7 +123,7 @@ export default function About() {
                     />
                     <figcaption className={styles.caption}>
                         <p className={utilStyles['text-sm']}>
-                            Hello, I'm Emma.
+                            Hello, I am Emma.
                         </p>
                     </figcaption>
                 </div>
@@ -138,7 +138,7 @@ export default function About() {
                     />
                     <figcaption className={styles.caption}>
                         <p className={utilStyles['text-sm']}>
-                            Hello, I'm Emma.
+                            Hello, I am Emma.
                         </p>
                     </figcaption>
                 </div>
@@ -153,7 +153,7 @@ export default function About() {
                     />
                     <figcaption className={styles.caption}>
                         <p className={utilStyles['text-sm']}>
-                            Hello, I'm Emma.
+                            Hello, I am Emma.
                         </p>
                     </figcaption>
                 </div>
@@ -196,7 +196,7 @@ export default function About() {
                     <li>Miro</li>
                 </ul>
             </section>
-            <Gradient />
+            <AboutGradient />
         </motion.div>
     );
 }
