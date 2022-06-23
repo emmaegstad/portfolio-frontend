@@ -28,6 +28,7 @@ export default function About() {
             onAnimationComplete={onAnimationComplete}
         >
             <section className={styles.aboutBio}>
+                <div></div>
                 <main>
                     <p className={styles.aboutBioPrimary}>
                         Hi, I am Emma Egstad. Full-stack web developer based in

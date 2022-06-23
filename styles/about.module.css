@@ -21,7 +21,10 @@
     .aboutBio {
         min-height: 100vh;
         overflow-y: scroll;
-        padding: 40vh 2em 0;
+        display: grid;
+        grid-template-rows: 70px 1fr 70px;
+        gap: 2em;
+        align-items: center;
         border-bottom: none;
     }
 }
