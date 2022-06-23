@@ -6,7 +6,7 @@ import { useGlobal } from '../context/GlobalContext';
 import cn from 'classnames';
 
 let frameCount = 0;
-const animationSpeedMultiplier = 0.02;
+const animationSpeedMultiplier = 0.009;
 
 function GradientPlane(props) {
     const mesh = useRef();
