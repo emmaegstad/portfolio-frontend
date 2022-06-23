@@ -8,9 +8,15 @@ import { client } from '../lib/projects';
 import { PortableText } from '@portabletext/react';
 import Skillset from '../components/Skillset';
 import { v4 as uuid } from 'uuid';
+import imageUrlBuilder from '@sanity/image-url';
 
 export default function About({ about }) {
-    console.log('about', about.skillsets);
+    console.log('about', about);
+    const builder = imageUrlBuilder(client);
+
+    function urlFor(source) {
+        return builder.image(source);
+    }
 
     // Animation variants
     const variants = {
@@ -73,81 +79,28 @@ export default function About({ about }) {
                 </ul>
             </section>
             <section className={styles.aboutImages}>
-                <figure className={styles.aboutImageWrapper}>
-                    <Image
-                        className={styles.aboutImage}
-                        src="/assets/emma.jpg"
-                        width={250}
-                        height={250}
-                        layout="responsive"
-                        alt="emma"
-                    />
-                    <figcaption className={styles.caption}>
-                        <p className={utilStyles['text-sm']}>
-                            Hello, I am Emma.
-                        </p>
-                    </figcaption>
-                </figure>
-                <figure className={styles.aboutImageWrapper}>
-                    <Image
-                        className={styles.aboutImage}
-                        src="/assets/cats.jpg"
-                        width={250}
-                        height={250}
-                        layout="responsive"
-                        alt="cats"
-                    />
-                    <figcaption className={styles.caption}>
-                        <p className={utilStyles['text-sm']}>
-                            Hello, I am Emma.
-                        </p>
-                    </figcaption>
-                </figure>
-                <div className={styles.aboutImageWrapper}>
-                    <Image
-                        className={styles.aboutImage}
-                        src="/assets/jordanjj.jpg"
-                        width={250}
-                        height={250}
-                        layout="responsive"
-                        alt="jordanjj"
-                    />
-                    <figcaption className={styles.caption}>
-                        <p className={utilStyles['text-sm']}>
-                            Hello, I am Emma.
-                        </p>
-                    </figcaption>
-                </div>
-                <div className={styles.aboutImageWrapper}>
-                    <Image
-                        className={styles.aboutImage}
-                        src="/assets/michelle.jpg"
-                        width={250}
-                        height={250}
-                        layout="responsive"
-                        alt="michelle"
-                    />
-                    <figcaption className={styles.caption}>
-                        <p className={utilStyles['text-sm']}>
-                            Hello, I am Emma.
-                        </p>
-                    </figcaption>
-                </div>
-                <div className={styles.aboutImageWrapper}>
-                    <Image
-                        className={styles.aboutImage}
-                        src="/assets/minnie.jpg"
-                        width={250}
-                        height={250}
-                        layout="responsive"
-                        alt="minnie"
-                    />
-                    <figcaption className={styles.caption}>
-                        <p className={utilStyles['text-sm']}>
-                            Hello, I am Emma.
-                        </p>
-                    </figcaption>
-                </div>
+                {about?.images.map((image) => {
+                    return (
+                        <figure
+                            key={uuid()}
+                            className={styles.aboutImageWrapper}
+                        >
+                            <Image
+                                className={styles.aboutImage}
+                                src={urlFor(image).url()}
+                                width={250}
+                                height={250}
+                                layout="responsive"
+                                alt={image.alt}
+                            />
+                            <figcaption className={styles.caption}>
+                                <p className={utilStyles['text-sm']}>
+                                    {image.caption}
+                                </p>
+                            </figcaption>
+                        </figure>
+                    );
+                })}
             </section>
             <section className={styles.aboutSkills}>
                 {about?.skillsets.map((skillset) => {

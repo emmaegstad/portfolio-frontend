@@ -12,6 +12,7 @@
     "@portabletext/react": "^1.0.6",
     "@react-three/drei": "^9.13.1",
     "@react-three/fiber": "^8.0.26",
+    "@sanity/image-url": "^1.0.1",
     "classnames": "^2.3.1",
     "framer-motion": "^6.3.11",
     "gsap": "^3.10.4",
