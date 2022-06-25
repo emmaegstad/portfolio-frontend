@@ -35,11 +35,13 @@
 
 .aboutBioPrimary {
     font-size: 1.4em;
+    max-width: 42ch;
 }
 
 .aboutBioSecondary {
     font-size: 0.9em;
     line-height: 1.5;
+    max-width: 52ch;
 }
 
 .aboutBioLinks {
@@ -140,4 +142,5 @@
 .caption {
     text-align: center;
     padding-top: 1em;
+    white-space: break-spaces;
 }
