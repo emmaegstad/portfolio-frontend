@@ -29,14 +29,16 @@ export default function Project({ project }) {
                 </div>
             </section>
             <section className={styles.projectLoom}>
-                <iframe
-                    className={styles.projectLoomIframe}
-                    src={project?.loom}
-                    frameBorder="0"
-                    webkitallowfullscreen="true"
-                    mozallowfullscreen="true"
-                    allowFullScreen
-                ></iframe>
+                <div className={styles.projectLoomWrapper}>
+                    <iframe
+                        className={styles.projectLoomIframe}
+                        src={project?.loom}
+                        frameBorder="0"
+                        webkitallowfullscreen="true"
+                        mozallowfullscreen="true"
+                        allowFullScreen
+                    ></iframe>
+                </div>
             </section>
         </li>
     );
