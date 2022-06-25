@@ -1,7 +1,7 @@
 import React, { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import styles from '../styles/gradient.module.css';
-import { fragmentShader, vertexShader } from '../utils/shaders';
+import { fragmentShader, vertexShader } from '../utils/homeShaders';
 import { useGlobal } from '../context/GlobalContext';
 import cn from 'classnames';
 

@@ -14,7 +14,7 @@ import Logo from '../public/assets/logo/logo-emma.js';
 import LogoLetterE from '../public/assets/logo/logo-letter-e.js';
 import LogoLetterM from '../public/assets/logo/logo-letter-m.js';
 import LogoLetterA from '../public/assets/logo/logo-letter-a.js';
-import Gradient from '../components/Gradient';
+import HomeGradient from '../components/HomeGradient';
 import { debounce, resizeCallback } from '../utils/debounce';
 
 export default function Index() {
@@ -174,7 +174,7 @@ export default function Index() {
                     software engineer in Tulsa, OK.&nbsp;
                 </p>
             </div>
-            <Gradient />
+            <HomeGradient />
             <footer>
                 <Footer />
             </footer>
