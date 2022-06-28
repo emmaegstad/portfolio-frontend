@@ -64,7 +64,7 @@ export default function Header() {
             <ul className={styles.headerList}>
                 {links.map((link, index) => (
                     <li className={styles.headerListItem} key={index}>
-                        <Link href={link.href}>
+                        <Link prefetch={false} href={link.href}>
                             <a
                                 className={cn({
                                     [utilStyles.button]: true,

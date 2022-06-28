@@ -25,7 +25,7 @@ export default function Footer() {
                 })}
             >
                 <li className={styles.footerLink}>
-                    <Link href="https://github.com/emmaegstad">
+                    <Link prefetch={false} href="https://github.com/emmaegstad">
                         <a
                             className={cn({
                                 [utilStyles.button]: true,
@@ -39,7 +39,10 @@ export default function Footer() {
                     </Link>
                 </li>
                 <li className={styles.footerLink}>
-                    <Link href="https://www.linkedin.com/in/emmaegstad/">
+                    <Link
+                        prefetch={false}
+                        href="https://www.linkedin.com/in/emmaegstad/"
+                    >
                         <a
                             className={cn({
                                 [utilStyles.button]: true,
@@ -53,7 +56,7 @@ export default function Footer() {
                     </Link>
                 </li>
                 <li className={styles.footerLink}>
-                    <Link href="mailto:emma@egstad.com">
+                    <Link prefetch={false} href="mailto:emma@egstad.com">
                         <a
                             className={cn({
                                 [utilStyles.button]: true,
