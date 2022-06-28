@@ -1,10 +1,10 @@
 import React from 'react';
-import Gradient from '../components/Gradient';
+import HomeGradient from '../components/HomeGradient';
 
 export default function test() {
     return (
         <div>
-            <Gradient />
+            <HomeGradient />
         </div>
     );
 }
