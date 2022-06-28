@@ -11,7 +11,6 @@ import { v4 as uuid } from 'uuid';
 import imageUrlBuilder from '@sanity/image-url';
 
 export default function About({ about }) {
-    console.log('about', about);
     const builder = imageUrlBuilder(client);
 
     function urlFor(source) {

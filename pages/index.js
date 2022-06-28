@@ -98,7 +98,6 @@ export default function Index() {
 
         //clean up listener
         return () => {
-            console.log('cleaning up');
             router.events.off('routeChangeStart', handleRouteChange);
         };
     }, [router.events, setActiveGif]);
