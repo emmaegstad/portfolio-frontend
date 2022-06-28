@@ -5,7 +5,7 @@ import { GlobalProvider } from '../context/GlobalContext';
 import Header from '../components/Header';
 import { AnimatePresence } from 'framer-motion';
 import { v4 as uuid } from 'uuid';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function MyApp({ Component, pageProps }) {
     const [mounted, setMounted] = useState(false);
