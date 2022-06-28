@@ -36,8 +36,8 @@ export default function Work({ projects }) {
             </section>
             <section className={styles.workCta}>
                 <span className={styles.workCtaCaption}>
-                    Thanks for looking! I am currently seeking new job
-                    opportunities.
+                    Thanks for checking out my work! I am currently seeking new
+                    job opportunities, so...
                 </span>
                 <Link href="/about">
                     <a
@@ -46,7 +46,7 @@ export default function Work({ projects }) {
                             [utilStyles.workButton]: true,
                         })}
                     >
-                        Learn More
+                        Learn More About Me
                     </a>
                 </Link>
             </section>
