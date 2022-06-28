@@ -5,8 +5,13 @@ import { GlobalProvider } from '../context/GlobalContext';
 import Header from '../components/Header';
 import { AnimatePresence } from 'framer-motion';
 import { v4 as uuid } from 'uuid';
+import { useState } from 'react';
 
 export default function MyApp({ Component, pageProps }) {
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => setMounted(true), []);
+
     return (
         <GlobalProvider>
             <Header key={uuid()} />
@@ -14,7 +19,9 @@ export default function MyApp({ Component, pageProps }) {
                 exitBeforeEnter
                 onExitComplete={() => window.scrollTo(0, 0)}
             >
-                <Component key={uuid()} {...pageProps} />
+                <div style={{ visibility: !mounted ? 'hidden' : '' }}>
+                    <Component key={uuid()} {...pageProps} />
+                </div>
             </AnimatePresence>
         </GlobalProvider>
     );
