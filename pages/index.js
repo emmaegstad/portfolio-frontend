@@ -109,7 +109,7 @@ export default function Index() {
             animate="enter"
             exit="exit"
             variants={variants}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 1 }}
         >
             <Head>
                 <title>Portfolio</title>

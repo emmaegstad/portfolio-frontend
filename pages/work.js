@@ -23,7 +23,7 @@ export default function Work({ projects }) {
             animate="enter"
             exit="exit"
             variants={variants}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 1 }}
         >
             <section className={styles.workProjects}>
                 {projects.length > 0 && (
