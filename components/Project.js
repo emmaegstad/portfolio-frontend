@@ -1,29 +1,20 @@
 import utilStyles from '../styles/utils.module.css';
 import styles from '../styles/project.module.css';
 import Link from 'next/link';
-import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
-import screenshot from '../public/assets/screenshot.jpg';
 
 export default function Project({ project }) {
     return (
         <li className={styles.project}>
             <h1 className={styles.projectTitle}>{project?.title}</h1>
-            <section className={styles.projectDescription}>
-                <PortableText value={project?.description} />
-            </section>
-            <div className={styles.projectImageWrapper}>
-                <Image
-                    className={styles.projectImage}
-                    src={screenshot}
-                    alt="screenshot"
-                />
-            </div>
-            <section className={styles.projectNav}>
+            <section className={styles.projectInfo}>
+                <div className={styles.projectDescription}>
+                    <PortableText value={project?.description} />
+                </div>
                 <div className={styles.projectNavLinks}>
                     <Link href={project?.site}>
                         <a
-                            className={`${styles.projectNavLink} ${utilStyles.button}`}
+                            className={`${utilStyles.button} ${styles.projectNavLink}`}
                         >
                             view site
                         </a>
@@ -36,22 +27,17 @@ export default function Project({ project }) {
                         </a>
                     </Link>
                 </div>
-                <div className={styles.projectNavTags}>
-                    <span
-                        className={`${styles.projectNavTag} ${utilStyles.button}`}
-                    >
-                        #React
-                    </span>
-                    <span
-                        className={`${styles.projectNavTag} ${utilStyles.button}`}
-                    >
-                        #Node.js
-                    </span>
-                    <span
-                        className={`${styles.projectNavTag} ${utilStyles.button}`}
-                    >
-                        #Express
-                    </span>
+            </section>
+            <section className={styles.projectLoom}>
+                <div className={styles.projectLoomWrapper}>
+                    <iframe
+                        className={styles.projectLoomIframe}
+                        src={project?.loom}
+                        frameBorder="0"
+                        webkitallowfullscreen="true"
+                        mozallowfullscreen="true"
+                        allowFullScreen
+                    ></iframe>
                 </div>
             </section>
         </li>

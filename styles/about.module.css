@@ -1,5 +1,5 @@
 .about {
-    color: rgba(255, 255, 255, 0.68);
+    color: white;
     padding-top: clamp(120px, 20vw, 160px);
 }
 
@@ -7,7 +7,7 @@
     .about {
         height: calc(100vh - 66px);
         display: grid;
-        grid-template-columns: 6fr 3fr 2fr;
+        grid-template-columns: 6fr 3fr 2.5fr;
         padding-top: 0;
     }
 }
@@ -21,7 +21,10 @@
     .aboutBio {
         min-height: 100vh;
         overflow-y: scroll;
-        padding: 40vh 2em 0;
+        display: grid;
+        grid-template-rows: 70px 1fr 70px;
+        gap: 2em;
+        align-items: center;
         border-bottom: none;
     }
 }
@@ -32,17 +35,13 @@
 
 .aboutBioPrimary {
     font-size: 1.4em;
+    max-width: 42ch;
 }
 
 .aboutBioSecondary {
     font-size: 0.9em;
     line-height: 1.5;
-}
-
-@media (min-width: 768px) {
-    .aboutBioSecondary {
-        width: 35ch;
-    }
+    max-width: 52ch;
 }
 
 .aboutBioLinks {
@@ -68,7 +67,7 @@
         width: 100%;
         border-left: 1px solid #ffffff54;
         border-bottom: none;
-        padding: 0;
+        padding: 2em 0;
     }
 }
 
@@ -96,10 +95,12 @@
 }
 
 .aboutSkills {
+    display: flex;
+    gap: 4em;
     width: 100vw;
     white-space: nowrap;
     overflow: auto;
-    padding: 1.5em;
+    padding: 4em 2em 2em 2em;
 }
 
 @media (min-width: 768px) {
@@ -107,10 +108,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 2em;
+        gap: 3em;
         width: 100%;
         border-left: 1px solid #ffffff54;
-        padding: 3vh 0;
+        padding: 4em 0;
     }
 }
 
@@ -124,6 +125,7 @@
         display: inline-block;
         width: 60%;
         padding-bottom: 2vh;
+        line-height: 1.6;
     }
 }
 
@@ -135,4 +137,10 @@
 
 .aboutSkillsColumn p {
     font-size: var(--font-size-small);
+}
+
+.caption {
+    text-align: center;
+    padding-top: 1em;
+    white-space: break-spaces;
 }

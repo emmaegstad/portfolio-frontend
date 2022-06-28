@@ -3,106 +3,64 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    color: #ffffff70;
-    padding: 2em 0;
+    width: 100vw;
+    color: #000000;
+    padding: 0em 1em 3em 1em;
+}
+
+@media (min-width: 640px) {
+    .project {
+        padding: 4em 6em 0 6em;
+    }
 }
 
 .projectTitle {
     font-family: var(--font-secondary);
-    font-size: 10vw;
-    font-feature-settings: 'ss06';
-    max-width: 15ch;
+    font-size: var(--font-size-xl);
     text-align: center;
     line-height: 0.75;
+    padding-bottom: 0.3em;
 }
 
 .projectDescription {
-    max-width: 30ch;
-    font-size: clamp(18px, 2vw, 24px);
-    padding: 1.5em;
-}
-
-@media (min-width: 768px) {
-    .projectDescription {
-        max-width: 45ch;
-    }
-}
-
-.projectImageWrapper {
-    padding: 1em;
-}
-
-@media (min-width: 768px) {
-    .projectImageWrapper {
-        padding: 0 6em;
-    }
-}
-
-.projectImage {
-    border-radius: 2vw;
-}
-
-.projectNav {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-@media (min-width: 768px) {
-    .projectNav {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-        padding: 0 6em;
-    }
+    font-size: var(--font-size-small);
+    padding-bottom: 1em;
+    width: 45ch;
 }
 
 .projectNavLinks {
     display: flex;
-    align-items: center;
-    padding: 1em;
+    justify-content: center;
+    width: 100%;
     gap: 1em;
-    border-top: 1px solid #ffffff54;
-    height: 48px;
-}
-
-@media (min-width: 768px) {
-    .projectNavLinks {
-        border: none;
-    }
+    padding-bottom: 2em;
 }
 
 .projectNavLink {
-    display: flex;
-    align-items: center;
     font-size: var(--font-size-small);
-    text-transform: lowercase;
-    color: #a42424;
-    background-color: #ffffffaf;
+    color: #eeeaea;
+    background-color: #000000;
 }
 
-.projectNavTags {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    border-top: 1px solid #ffffff54;
-    border-bottom: 1px solid #ffffff54;
-    padding: 1em;
-    height: 48px;
+.projectLoom {
+    width: 100%;
+    max-width: 1000px;
+    max-height: auto;
+    margin: 0;
 }
 
-@media (min-width: 768px) {
-    .projectNavTags {
-        border: none;
-    }
+.projectLoomWrapper {
+    width: 100%;
+    height: 0;
+    position: relative;
+    padding-bottom: 56.25% !important;
 }
 
-.projectNavTag {
-    display: flex;
-    align-items: center;
-    text-transform: lowercase;
-    font-family: var(--font-mono);
-    font-size: var(--font-size-small);
+.projectLoomIframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: clamp(1em, 1.5vw, 2em);
 }

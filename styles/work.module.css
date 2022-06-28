@@ -9,6 +9,33 @@
     flex-direction: column;
     align-items: center;
     gap: 2em;
-    margin: 2em 0 2em 0;
-    padding-top: clamp(40px, 4vw, 160px);
+    padding-top: 3.5em;
+}
+
+@media (min-width: 768px) {
+    .workProjects {
+        padding-top: 2em;
+    }
+}
+
+.workCta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    font-family: var(--font-primary-bold);
+    font-size: var(--font-size-large);
+    text-align: center;
+    padding: 0.5em 2em 2.5em 2em;
+}
+
+@media (min-width: 768px) {
+    .workCta {
+        padding: 3em;
+        gap: 0.5em;
+    }
+}
+
+.workCtaCaption {
+    letter-spacing: -0.06em;
 }

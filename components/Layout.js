@@ -1,30 +1,29 @@
 import styles from '../styles/layout.module.css';
-import { useEffect } from 'react';
-import { useGlobal } from '../context/GlobalContext';
-import { debounce, resizeCallback } from '../utils/debounce';
-import Header from './Header';
+import { motion } from 'framer-motion';
 
 export default function Layout({ children }) {
-    const { layoutHasMounted } = useGlobal();
+    const variants = {
+        hidden: { opacity: 0, x: 0, y: 0 },
+        enter: { opacity: 1, x: 0, y: 0 },
+        exit: { opacity: 0, x: 0, y: 0 },
+    };
 
-    //set event listener for brower resize
-    useEffect(() => {
-        window.addEventListener('resize', debounce(resizeCallback, 300));
-    }, []);
-
-    // tell the app that the layout has mounted
-    useEffect(() => {
-        const layoutMounted = new CustomEvent('layoutMounted');
-
-        dispatchEvent(layoutMounted);
-
-        layoutHasMounted.current = true;
-    }, [layoutHasMounted]);
+    const onAnimationComplete = () => {
+        console.log('layout animation has completed');
+    };
 
     return (
         <div className={styles.layout}>
-            <Header />
-            <main>{children}</main>
+            <motion.main
+                initial="hidden"
+                animate="enter"
+                exit="exit"
+                variants={variants}
+                transition={{ type: 'linear' }}
+                onAnimationComplete={onAnimationComplete}
+            >
+                {children}
+            </motion.main>
         </div>
     );
 }

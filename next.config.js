@@ -8,7 +8,7 @@ const nextConfig = {
 module.exports = {
     nextConfig,
     images: {
-        domains: ['media.giphy.com'],
+        domains: ['media.giphy.com', 'cdn.sanity.io'],
     },
     webpack(config) {
         config.module.rules.push({
