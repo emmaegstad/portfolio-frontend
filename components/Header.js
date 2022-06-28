@@ -7,7 +7,6 @@ import cn from 'classnames';
 import { motion } from 'framer-motion';
 
 export default function Header() {
-    // const [headerLoaded, setHeaderLoaded] = useState(false);
     const { currentIndex, setCurrentIndex, activeGif, setActiveGif, gifs } =
         useGlobal();
     const router = useRouter();
