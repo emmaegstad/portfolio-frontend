@@ -31,7 +31,7 @@ export default function About({ about }) {
             animate="enter"
             exit="exit"
             variants={variants}
-            transition={{ duration: 2 }}
+            transition={{ duration: 0.6 }}
         >
             <section className={styles.aboutBio}>
                 <div></div>
