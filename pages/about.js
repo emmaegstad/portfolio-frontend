@@ -97,9 +97,9 @@ export default function About({ about }) {
                                 ).url()}?w=758&auto=format&fit=max 768w, ${urlFor(
                                     image
                                 ).url()}?w=1024&auto=format&fit=max 1024w`}
-                                width={250}
-                                height={250}
-                                layout="responsive"
+                                // width={250}
+                                // height={250}
+                                // layout="responsive"
                                 alt={image.alt}
                             />
                             <figcaption className={styles.caption}>
