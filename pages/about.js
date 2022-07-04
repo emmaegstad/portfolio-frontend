@@ -1,7 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
+
 import utilStyles from '../styles/utils.module.css';
 import styles from '../styles/about.module.css';
 import Link from 'next/link';
-// import Image from 'next/image';
 import { motion } from 'framer-motion';
 import AboutGradient from '../components/AboutGradient';
 import { client } from '../lib/projects';
