@@ -1,7 +1,7 @@
 import utilStyles from '../styles/utils.module.css';
 import styles from '../styles/about.module.css';
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { motion } from 'framer-motion';
 import AboutGradient from '../components/AboutGradient';
 import { client } from '../lib/projects';
@@ -84,9 +84,18 @@ export default function About({ about }) {
                             key={uuid()}
                             className={styles.aboutImageWrapper}
                         >
-                            <Image
+                            <img
                                 className={styles.aboutImage}
-                                src={urlFor(image).url()}
+                                src={`${urlFor(
+                                    image
+                                ).url()}?w=128&auto=format&fit=max`}
+                                srcSet={`${urlFor(
+                                    image
+                                ).url()}?w=512&auto=format&fit=max 512w, ${urlFor(
+                                    image
+                                ).url()}?w=758&auto=format&fit=max 768w, ${urlFor(
+                                    image
+                                ).url()}?w=1024&auto=format&fit=max 1024w`}
                                 width={250}
                                 height={250}
                                 layout="responsive"
