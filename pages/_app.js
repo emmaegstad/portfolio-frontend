@@ -15,13 +15,10 @@ export default function MyApp({ Component, pageProps }) {
     return (
         <GlobalProvider>
             <Header key={uuid()} />
-            <AnimatePresence
-                exitBeforeEnter
-                onExitComplete={() => window.scrollTo(0, 0)}
-            >
-                <div style={{ visibility: !mounted ? 'hidden' : '' }}>
-                    <Component key={uuid()} {...pageProps} />
-                </div>
+            <AnimatePresence exitBeforeEnter>
+                {/* <div style={{ visibility: !mounted ? 'hidden' : '' }}> */}
+                <Component key={uuid()} {...pageProps} />
+                {/* </div> */}
             </AnimatePresence>
         </GlobalProvider>
     );

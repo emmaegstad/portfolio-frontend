@@ -16,6 +16,7 @@ import LogoLetterM from '../public/assets/logo/logo-letter-m.js';
 import LogoLetterA from '../public/assets/logo/logo-letter-a.js';
 import HomeGradient from '../components/HomeGradient';
 import { debounce, resizeCallback } from '../utils/debounce';
+import { v4 as uuid } from 'uuid';
 
 export default function Index() {
     const router = useRouter();
