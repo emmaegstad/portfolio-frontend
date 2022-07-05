@@ -1,10 +1,18 @@
 .header {
     display: flex;
+    width: 100vw;
+    padding: 1em 1em;
+}
+
+.aboutHeader {
+    padding: 1em 0em;
+    width: 100%;
+}
+
+.indexHeader {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    padding: 1em 2em;
     z-index: 9999;
 }
 

@@ -14,7 +14,7 @@ export default function MyApp({ Component, pageProps }) {
 
     return (
         <GlobalProvider>
-            <Header key={uuid()} />
+            {/* <Header key={uuid()} /> */}
             <AnimatePresence exitBeforeEnter>
                 <div style={{ visibility: !mounted ? 'hidden' : '' }}>
                     <Component key={uuid()} {...pageProps} />

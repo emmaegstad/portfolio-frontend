@@ -33,10 +33,10 @@ export default function Header() {
         exit: { opacity: 0, x: 0, y: 0 },
     };
 
-    const onComplete = () => {
-        setHeaderLoaded(true);
-        console.log('header animation complete');
-    };
+    // const onComplete = () => {
+    //     setHeaderLoaded(true);
+    //     console.log('header animation complete');
+    // };
 
     const handleClick = () => {
         setActiveGif(true);
@@ -54,12 +54,16 @@ export default function Header() {
 
     return (
         <motion.div
-            className={styles.header}
+            className={cn({
+                [styles.header]: true,
+                [styles.aboutHeader]: router.pathname === '/about',
+                [styles.indexHeader]: router.pathname === '/',
+            })}
             initial="enter"
             // animate="enter"
             variants={variants}
             transition={{ staggerChildren: 0.5 }}
-            onAnimationComplete={onComplete}
+            // onAnimationComplete={onComplete}
         >
             <ul className={styles.headerList}>
                 {links.map((link, index) => (

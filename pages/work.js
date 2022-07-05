@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import cn from 'classnames';
 import Link from 'next/link';
 import { useEffect } from 'react';
+import Header from '../components/Header';
 
 export default function Work({ projects }) {
     let hueVal = 0;
@@ -62,6 +63,7 @@ export default function Work({ projects }) {
             variants={variants}
             transition={{ duration: 0.6 }}
         >
+            <Header />
             <section className={styles.workProjects}>
                 {projects.length > 0 && (
                     <ul className={styles.workProjects}>

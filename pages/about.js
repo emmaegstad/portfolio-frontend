@@ -2,6 +2,7 @@
 
 import utilStyles from '../styles/utils.module.css';
 import styles from '../styles/about.module.css';
+import headerStyles from '../styles/header.module.css';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import AboutGradient from '../components/AboutGradient';
@@ -10,8 +11,12 @@ import { PortableText } from '@portabletext/react';
 import Skillset from '../components/Skillset';
 import { v4 as uuid } from 'uuid';
 import imageUrlBuilder from '@sanity/image-url';
+import Header from '../components/Header';
+import { useRouter } from 'next/router';
+import cn from 'classnames';
 
 export default function About({ about }) {
+    const router = useRouter();
     const builder = imageUrlBuilder(client);
 
     function urlFor(source) {
@@ -35,7 +40,7 @@ export default function About({ about }) {
             transition={{ duration: 1 }}
         >
             <section className={styles.aboutBio}>
-                <div></div>
+                <Header />
                 <main>
                     <div className={styles.aboutBioPrimary}>
                         <PortableText value={about?.first} />

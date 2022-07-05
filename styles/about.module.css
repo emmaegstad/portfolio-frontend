@@ -1,6 +1,6 @@
 .about {
     color: white;
-    padding-top: clamp(120px, 20vw, 160px);
+    /* padding-top: 2em; */
 }
 
 @media (min-width: 768px) {
@@ -13,6 +13,10 @@
 }
 
 .aboutBio {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    height: 100%;
     padding: 0 2em;
     border-bottom: 1px solid #ffffff54;
 }

@@ -3,7 +3,6 @@
 import styles from '../styles/index.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Head from 'next/head';
-import Image from 'next/image';
 import { useEffect, useCallback, useRef } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 import { useRouter } from 'next/router';
@@ -20,6 +19,7 @@ import HomeGradient from '../components/HomeGradient';
 import { debounce, resizeCallback } from '../utils/debounce';
 import { client } from '../lib/projects';
 import imageUrlBuilder from '@sanity/image-url';
+import Header from '../components/Header';
 
 export default function Index() {
     const router = useRouter();
@@ -129,6 +129,7 @@ export default function Index() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+            <Header />
             <h1
                 className={cn({
                     [styles.indexLogo]: true,
