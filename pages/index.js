@@ -16,13 +16,20 @@ import LogoLetterM from '../public/assets/logo/logo-letter-m.js';
 import LogoLetterA from '../public/assets/logo/logo-letter-a.js';
 import HomeGradient from '../components/HomeGradient';
 import { debounce, resizeCallback } from '../utils/debounce';
-import { v4 as uuid } from 'uuid';
+import { client } from '../lib/projects';
+import imageUrlBuilder from '@sanity/image-url';
 
 export default function Index() {
     const router = useRouter();
     const marquee = Marquee3k;
     const { currentIndex, activeGif, setActiveGif, gifs } = useGlobal();
     const elsMobileLogo = useRef();
+
+    //sanity url builder for gifs
+    const builder = imageUrlBuilder(client);
+    function urlFor(source) {
+        return builder.image(source);
+    }
 
     // Create randomized letter position for mobile logo
     const setRandomLetterPosition = (el) => {
@@ -152,7 +159,9 @@ export default function Index() {
             {activeGif && (
                 <div className={styles.backgroundWrapper}>
                     <Image
-                        src={gifs[currentIndex].url}
+                        src={`${urlFor(
+                            gifs[currentIndex].file
+                        ).url()}?w=10&auto=format&fit=max`}
                         alt="cat gif"
                         layout="fill"
                         className={styles.backgroundImage}
