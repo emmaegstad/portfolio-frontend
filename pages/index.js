@@ -165,7 +165,6 @@ export default function Index() {
                             gifs[currentIndex].file
                         ).url()}?w=128&auto=format&fit=max`}
                         alt="cat gif"
-                        // layout="fill"
                         className={styles.backgroundImage}
                     />
                 </div>

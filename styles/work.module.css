@@ -27,6 +27,12 @@
     font-size: var(--font-size-large);
     text-align: center;
     padding: 0.5em 2em 2.5em 2em;
+    max-width: 1000px;
+}
+
+.workCta > a {
+    color: white;
+    background-color: var(--foreground);
 }
 
 @media (min-width: 768px) {
@@ -38,4 +44,5 @@
 
 .workCtaCaption {
     letter-spacing: -0.06em;
+    color: var(--foreground);
 }

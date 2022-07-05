@@ -1,7 +1,8 @@
 :root {
     --background: #ffffff;
-    --foreground: #000000;
-    --accent: rgb(2, 55, 153);
+    --foregroundHue: 0;
+    --foreground: hsla(var(--foregroundHue), 0%, 100%, 80%);
+    --accent: rgb(38, 41, 47);
 
     --font-primary: 'GT-Maru-Regular', Helvetica, sans-serif;
     --font-primary-bold: 'GT-Maru-Medium', Helvetica, sans-serif;
