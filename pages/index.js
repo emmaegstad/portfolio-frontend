@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import styles from '../styles/index.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Head from 'next/head';
@@ -158,12 +160,12 @@ export default function Index() {
             </h1>
             {activeGif && (
                 <div className={styles.backgroundWrapper}>
-                    <Image
+                    <img
                         src={`${urlFor(
                             gifs[currentIndex].file
-                        ).url()}?w=10&auto=format&fit=max`}
+                        ).url()}?w=128&auto=format&fit=max`}
                         alt="cat gif"
-                        layout="fill"
+                        // layout="fill"
                         className={styles.backgroundImage}
                     />
                 </div>
