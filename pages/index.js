@@ -122,12 +122,31 @@ export default function Index() {
             transition={{ duration: 0.6 }}
         >
             <Head>
-                <title>Portfolio</title>
+                <title>Emma Egstad</title>
                 <meta
                     name="description"
-                    content="Hello! My name is Emma, and I'm a full-stack web developer located in Tulsa, OK."
+                    content="Hello! My name is Emma Egstad - I am a full-stack software engineer in Tulsa, OK. I create beautiful, accessible, and occasionally feline experiences on the web."
                 />
-                {/* <link rel="icon" href="/favicon.ico" /> */}
+                <meta property="og:title" content="Emma Egstad" />
+                <meta property="og:site_name" content="Emma Egstad" />
+                <meta
+                    property="og:url"
+                    content="https://emmaegstad.netlify.app/"
+                />
+                <meta
+                    property="og:description"
+                    content="Hello! My name is Emma Egstad - I am a full-stack software engineer in Tulsa, OK. I create beautiful, accessible, and occasionally feline experiences on the web."
+                />
+                <meta property="og:type" content="website" />
+                <meta property="og:image" content="/ogimage.png"></meta>
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:site" content="@emmaegstad" />
+                <meta name="twitter:title" content="Emma Egstad" />
+                <meta
+                    name="twitter:description"
+                    content="Hello! My name is Emma Egstad - I am a full-stack software engineer in Tulsa, OK. I create beautiful, accessible, and occasionally feline experiences on the web."
+                />
+                <meta name="twitter:image" content="/ogimage"></meta>
                 <link
                     rel="apple-touch-icon"
                     sizes="180x180"
