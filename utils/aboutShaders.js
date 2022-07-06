@@ -1,4 +1,4 @@
-// remove whitespace from glsl shaders
+// removes whitespace from glsl shaders
 const glsl = (x) => x[0].trim();
 
 export const fragmentShader = glsl`

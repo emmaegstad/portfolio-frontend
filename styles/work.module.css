@@ -30,16 +30,16 @@
     max-width: 1000px;
 }
 
-.workCta > a {
-    color: white;
-    background-color: var(--foreground);
-}
-
 @media (min-width: 768px) {
     .workCta {
         padding: 3em;
         gap: 0.5em;
     }
+}
+
+.workCta > a {
+    color: white;
+    background-color: var(--foreground);
 }
 
 .workCtaCaption {

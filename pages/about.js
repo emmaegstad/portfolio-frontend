@@ -1,29 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
-
 import utilStyles from '../styles/utils.module.css';
 import styles from '../styles/about.module.css';
-import headerStyles from '../styles/header.module.css';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import AboutGradient from '../components/AboutGradient';
 import { client } from '../lib/projects';
-import { PortableText } from '@portabletext/react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import Header from '../components/Header';
 import Skillset from '../components/Skillset';
+import AboutGradient from '../components/AboutGradient';
+import { PortableText } from '@portabletext/react';
+import { motion } from 'framer-motion';
 import { v4 as uuid } from 'uuid';
 import imageUrlBuilder from '@sanity/image-url';
-import Header from '../components/Header';
-import { useRouter } from 'next/router';
-import cn from 'classnames';
 
 export default function About({ about }) {
-    const router = useRouter();
     const builder = imageUrlBuilder(client);
 
     function urlFor(source) {
         return builder.image(source);
     }
 
-    // Animation variants
     const variants = {
         hidden: { opacity: 0, x: 0, y: 0 },
         enter: { opacity: 1, x: 0, y: 0 },
@@ -102,9 +97,6 @@ export default function About({ about }) {
                                 ).url()}?w=758&auto=format&fit=max 768w, ${urlFor(
                                     image
                                 ).url()}?w=1024&auto=format&fit=max 1024w`}
-                                // width={250}
-                                // height={250}
-                                // layout="responsive"
                                 alt={image.alt}
                             />
                             <figcaption className={styles.caption}>

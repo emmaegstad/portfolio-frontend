@@ -12,7 +12,6 @@
     }
 
     .footerWork {
-        /* border-top: 1px solid rgba(0, 0, 0, 0.119); */
         border-top: 1px solid hsla(var(--foregroundHue), 30%, 50%, 20%);
     }
 
@@ -83,14 +82,7 @@
 
 .footerTextWork {
     color: var(--foreground);
-    /* border-top: 1px solid hsla(var(--foregroundHue), 80%, 100%, 50%); */
 }
-
-/* @media (min-width: 640px) {
-    .footerTextWork {
-        border: none;
-    }
-} */
 
 .footerTextGif {
     color: white;

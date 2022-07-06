@@ -1,25 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
-
 import styles from '../styles/index.module.css';
 import utilStyles from '../styles/utils.module.css';
-import Head from 'next/head';
 import { useEffect, useCallback, useRef } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 import { useRouter } from 'next/router';
+import { debounce, resizeCallback } from '../utils/debounce';
+import { client } from '../lib/projects';
+import Head from 'next/head';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import HomeGradient from '../components/HomeGradient';
 import cn from 'classnames';
 import gsap from 'gsap';
 import Marquee3k from 'marquee3000';
 import { motion } from 'framer-motion';
-import Footer from '../components/Footer';
+import imageUrlBuilder from '@sanity/image-url';
 import Logo from '../public/assets/logo/logo-emma.js';
 import LogoLetterE from '../public/assets/logo/logo-letter-e.js';
 import LogoLetterM from '../public/assets/logo/logo-letter-m.js';
 import LogoLetterA from '../public/assets/logo/logo-letter-a.js';
-import HomeGradient from '../components/HomeGradient';
-import { debounce, resizeCallback } from '../utils/debounce';
-import { client } from '../lib/projects';
-import imageUrlBuilder from '@sanity/image-url';
-import Header from '../components/Header';
 
 export default function Index() {
     const router = useRouter();

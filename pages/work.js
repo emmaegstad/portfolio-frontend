@@ -1,20 +1,19 @@
 import utilStyles from '../styles/utils.module.css';
 import styles from '../styles/work.module.css';
 import { client } from '../lib/projects';
-import Project from '../components/Project';
-import Footer from '../components/Footer';
-import { v4 as uuid } from 'uuid';
-import { motion } from 'framer-motion';
-import cn from 'classnames';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Project from '../components/Project';
+import cn from 'classnames';
+import { v4 as uuid } from 'uuid';
+import { motion } from 'framer-motion';
 
 export default function Work({ projects }) {
     let hueVal = 175;
     let speed = 0.25;
 
-    // Animation variants
     const variants = {
         hidden: { opacity: 0, x: 0, y: 0 },
         enter: { opacity: 1, x: 0, y: 0 },
@@ -50,7 +49,6 @@ export default function Work({ projects }) {
                 '--foreground',
                 'hsla(var(--foregroundHue), 0%, 100%, 80%)'
             );
-            // --foreground: hsla(var(--foregroundHue), 0%, 100%, 80%);
         };
     }, [hueVal]);
 

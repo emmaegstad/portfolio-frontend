@@ -1,9 +1,9 @@
 import styles from '../styles/footer.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
-import cn from 'classnames';
 import { useRouter } from 'next/router';
 import { useGlobal } from '../context/GlobalContext';
+import cn from 'classnames';
 
 export default function Footer() {
     const { activeGif } = useGlobal();
