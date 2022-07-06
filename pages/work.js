@@ -11,7 +11,7 @@ import { useEffect } from 'react';
 import Header from '../components/Header';
 
 export default function Work({ projects }) {
-    let hueVal = 0;
+    let hueVal = 175;
     let speed = 0.25;
 
     // Animation variants
