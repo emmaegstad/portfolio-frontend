@@ -138,7 +138,10 @@ export default function Index() {
                     content="Hello! My name is Emma Egstad - I am a full-stack software engineer in Tulsa, OK. I create beautiful, accessible, and occasionally feline experiences on the web."
                 />
                 <meta property="og:type" content="website" />
-                <meta property="og:image" content="/ogimage.png"></meta>
+                <meta
+                    property="og:image"
+                    content="https://emmaegstad.netlify.app/ogimage.png"
+                ></meta>
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:site" content="@emmaegstad" />
                 <meta name="twitter:title" content="Emma Egstad" />
@@ -146,7 +149,10 @@ export default function Index() {
                     name="twitter:description"
                     content="Hello! My name is Emma Egstad - I am a full-stack software engineer in Tulsa, OK. I create beautiful, accessible, and occasionally feline experiences on the web."
                 />
-                <meta name="twitter:image" content="/ogimage"></meta>
+                <meta
+                    name="twitter:image"
+                    content="https://emmaegstad.netlify.app/ogimage.png"
+                ></meta>
                 <link
                     rel="apple-touch-icon"
                     sizes="180x180"
