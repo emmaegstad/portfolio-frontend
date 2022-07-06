@@ -11,8 +11,8 @@ import { v4 as uuid } from 'uuid';
 import { motion } from 'framer-motion';
 
 export default function Work({ projects }) {
-    let hueVal = 175;
-    let speed = 0.25;
+    let hueVal = 125;
+    let speed = 0.15;
 
     const variants = {
         hidden: { opacity: 0, x: 0, y: 0 },
