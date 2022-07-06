@@ -1,8 +1,8 @@
-import React, { useRef, useMemo } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
 import styles from '../styles/gradient.module.css';
-import { fragmentShader, vertexShader } from '../utils/aboutShaders';
+import { useRef, useMemo } from 'react';
 import { useGlobal } from '../context/GlobalContext';
+import { fragmentShader, vertexShader } from '../utils/aboutShaders';
+import { Canvas, useFrame } from '@react-three/fiber';
 import cn from 'classnames';
 
 let frameCount = 0;

@@ -1,6 +1,5 @@
-import React from 'react';
-import { v4 as uuid } from 'uuid';
 import styles from '../styles/about.module.css';
+import { v4 as uuid } from 'uuid';
 
 export default function Skillset({ skillset }) {
     return (

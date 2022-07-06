@@ -1,12 +1,14 @@
+/* eslint-disable @next/next/no-img-element */
 import utilStyles from '../styles/utils.module.css';
 import styles from '../styles/about.module.css';
-import Link from 'next/link';
-// import Image from 'next/image';
-import { motion } from 'framer-motion';
-import AboutGradient from '../components/AboutGradient';
 import { client } from '../lib/projects';
-import { PortableText } from '@portabletext/react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import Header from '../components/Header';
 import Skillset from '../components/Skillset';
+import AboutGradient from '../components/AboutGradient';
+import { PortableText } from '@portabletext/react';
+import { motion } from 'framer-motion';
 import { v4 as uuid } from 'uuid';
 import imageUrlBuilder from '@sanity/image-url';
 
@@ -17,7 +19,6 @@ export default function About({ about }) {
         return builder.image(source);
     }
 
-    // Animation variants
     const variants = {
         hidden: { opacity: 0, x: 0, y: 0 },
         enter: { opacity: 1, x: 0, y: 0 },
@@ -34,7 +35,7 @@ export default function About({ about }) {
             transition={{ duration: 1 }}
         >
             <section className={styles.aboutBio}>
-                <div></div>
+                <Header />
                 <main>
                     <div className={styles.aboutBioPrimary}>
                         <PortableText value={about?.first} />
@@ -96,9 +97,6 @@ export default function About({ about }) {
                                 ).url()}?w=758&auto=format&fit=max 768w, ${urlFor(
                                     image
                                 ).url()}?w=1024&auto=format&fit=max 1024w`}
-                                width={250}
-                                height={250}
-                                layout="responsive"
                                 alt={image.alt}
                             />
                             <figcaption className={styles.caption}>

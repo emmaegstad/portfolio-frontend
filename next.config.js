@@ -3,8 +3,6 @@ const nextConfig = {
     reactStrictMode: true,
 };
 
-// module.exports = nextConfig;
-
 module.exports = {
     nextConfig,
     images: {
@@ -19,13 +17,4 @@ module.exports = {
 
         return config;
     },
-
-    // async rewrites() {
-    //     return [
-    //         {
-    //             source: '/api/:path*',
-    //             destination: 'https://api.example.com/:path*',
-    //         },
-    //     ];
-    // },
 };

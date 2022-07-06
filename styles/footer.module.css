@@ -7,12 +7,12 @@
 @media (min-width: 640px) {
     .footer {
         flex-direction: row;
-        padding: 1em;
+        padding: 1em 1em;
         border-top: 1px solid #ffffff70;
     }
 
     .footerWork {
-        border-top: 1px solid rgba(0, 0, 0, 0.119);
+        border-top: 1px solid hsla(var(--foregroundHue), 30%, 50%, 20%);
     }
 
     .footerGif {
@@ -68,7 +68,6 @@
     height: 72px;
     color: #ffffff70;
     font-size: var(--font-size-small);
-    border-top: 1px solid #ffffff54;
 }
 
 @media (min-width: 640px) {
@@ -82,14 +81,7 @@
 }
 
 .footerTextWork {
-    color: black;
-    border-top: 1px solid rgba(0, 0, 0, 0.119);
-}
-
-@media (min-width: 640px) {
-    .footerTextWork {
-        border: none;
-    }
+    color: var(--foreground);
 }
 
 .footerTextGif {

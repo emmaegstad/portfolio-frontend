@@ -1,6 +1,5 @@
 .about {
     color: white;
-    padding-top: clamp(120px, 20vw, 160px);
 }
 
 @media (min-width: 768px) {
@@ -13,7 +12,11 @@
 }
 
 .aboutBio {
-    padding: 0 2.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    height: 100%;
+    padding: 0 2em;
     border-bottom: 1px solid #ffffff54;
 }
 
@@ -67,12 +70,13 @@
         width: 100%;
         border-left: 1px solid #ffffff54;
         border-bottom: none;
-        padding: 2em 0;
+        padding: 2em 1em;
     }
 }
 
 .aboutImageWrapper {
     display: inline-block;
+    justify-content: center;
     width: 65vw;
     padding: 1em;
     border-radius: 50vw;
@@ -86,12 +90,18 @@
 
 @media (min-width: 768px) {
     .aboutImageWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
     }
 }
 
 .aboutImage {
     border-radius: 50vw;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
 }
 
 .aboutSkills {
