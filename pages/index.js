@@ -6,7 +6,7 @@ import { useGlobal } from '../context/GlobalContext';
 import { useRouter } from 'next/router';
 import { debounce, resizeCallback } from '../utils/debounce';
 import { client } from '../lib/projects';
-import Head from 'next/head';
+// import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import HomeGradient from '../components/HomeGradient';
@@ -120,7 +120,7 @@ export default function Index() {
             variants={variants}
             transition={{ duration: 0.6 }}
         >
-            <Head>
+            {/* <Head>
                 <title>Emma Egstad</title>
                 <meta
                     name="description"
@@ -177,7 +177,7 @@ export default function Index() {
                 />
                 <meta name="msapplication-TileColor" content="#da532c" />
                 <meta name="theme-color" content="#ffffff"></meta>
-            </Head>
+            </Head> */}
             <Header />
             <h1
                 className={cn({
