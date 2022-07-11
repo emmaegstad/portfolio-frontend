@@ -22,10 +22,7 @@ export default function MyApp({ Component, pageProps }) {
                 />
                 <meta property="og:title" content="Emma Egstad" />
                 <meta property="og:site_name" content="Emma Egstad" />
-                <meta
-                    property="og:url"
-                    content="https://emmaegstad.netlify.app/"
-                />
+                <meta property="og:url" content="https://emmaegstad.com/" />
                 <meta
                     property="og:description"
                     content="Hello! My name is Emma Egstad - I am a full-stack software engineer in Tulsa, OK. I create beautiful, accessible, and occasionally feline experiences on the web."
@@ -33,7 +30,7 @@ export default function MyApp({ Component, pageProps }) {
                 <meta property="og:type" content="website" />
                 <meta
                     property="og:image"
-                    content="https://emmaegstad.netlify.app/ogimage.png"
+                    content="https://emmaegstad.com/ogimage.png"
                 ></meta>
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:site" content="@emmaegstad" />
@@ -44,7 +41,7 @@ export default function MyApp({ Component, pageProps }) {
                 />
                 <meta
                     name="twitter:image"
-                    content="https://emmaegstad.netlify.app/ogimage.png"
+                    content="https://emmaegstad.com/ogimage.png"
                 ></meta>
                 <link
                     rel="apple-touch-icon"
