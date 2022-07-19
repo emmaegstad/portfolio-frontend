@@ -69,7 +69,7 @@ export default function About({ about }) {
                             email
                         </a>
                     </Link>
-                    <Link href="https://drive.google.com/file/d/1YHMuphsnAJX7VBHCSvsWfJBBmBJ-zi9o/view?usp=sharing">
+                    <Link href="https://drive.google.com/file/d/1QwzgwhRlO8SPMpMjUn6HiGv4HMNj_8I4/view?usp=sharing">
                         <a
                             className={`${utilStyles.button} ${styles.footerLink}`}
                         >
